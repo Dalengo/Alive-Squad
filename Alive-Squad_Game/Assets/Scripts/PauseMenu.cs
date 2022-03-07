@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        //PlayerMovement.Instance.enabled = false; marche pas
+        //PlayerMovement.instance.enabled = false; 
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        //PlayerMovement.Instance.enabled = true; 
+        //PlayerMovement.instance.enabled = true; 
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
