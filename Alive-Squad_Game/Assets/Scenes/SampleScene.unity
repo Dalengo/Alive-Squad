@@ -6967,10 +6967,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1469163882}
   - component: {fileID: 1469163881}
-  - component: {fileID: 1469163883}
   - component: {fileID: 1469163880}
   - component: {fileID: 1469163884}
   - component: {fileID: 1469163878}
+  - component: {fileID: 1469163879}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -6994,6 +6994,30 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0026262403, y: 0.7084345}
   m_Size: {x: 1.0107807, y: 1.3932272}
   m_Direction: 0
+--- !u!114 &1469163879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469163877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc72e56ccc2abcc45a8d7f1c28016cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 400
+  jumpforce: 400
+  isJumping: 0
+  isGrounded: 0
+  groundCheck: {fileID: 2029902748}
+  groundCheckRadius: 0.5
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  rb: {fileID: 1469163880}
+  animator: {fileID: 1469163884}
+  spriteRenderer: {fileID: 1469163881}
 --- !u!50 &1469163880
 Rigidbody2D:
   serializedVersion: 4
@@ -7081,30 +7105,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1469163883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469163877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df326fdbffbdbc4192a371468918421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 400
-  jumpforce: 400
-  isJumping: 0
-  isGrounded: 0
-  groundCheck: {fileID: 2029902748}
-  groundCheckRadius: 0.32
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  rb: {fileID: 1469163880}
-  animator: {fileID: 1469163884}
-  spriteRenderer: {fileID: 1469163881}
 --- !u!95 &1469163884
 Animator:
   serializedVersion: 3
