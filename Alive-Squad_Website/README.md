@@ -38,3 +38,6 @@ long. Alive Squad is a mix of both.
 - [x]  Make the first pictures
 - [x]  Make the firt mouvements/interaction on Unity 
 - [x]  Make the website 
+- [ ]  Finish the first level
+- [ ]  Organize the github page
+- [ ]  Add ennemies
