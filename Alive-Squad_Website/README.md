@@ -35,6 +35,6 @@ long. Alive Squad is a mix of both.
 </p>
 
 ### Task list 
-- [ ]  Make the first pictures
-- [ ]  Make the firt mouvements/interaction on Unity 
+- [x]  Make the first pictures
+- [x]  Make the firt mouvements/interaction on Unity 
 - [x]  Make the website 
