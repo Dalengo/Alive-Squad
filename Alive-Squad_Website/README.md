@@ -5,9 +5,7 @@ Back to the surface, Alive Squad immerses you in a universe mixing adventure and
 To do this, you will have to understand and adapt to your environment in order to survive! To win, you have to climb the floors by jumping with precision while staying alive.
 
 <details>
-<summary> element {
-  font-size: 75;
-} Introduction</summary>
+## <summary>Introduction</summary>
 <br>
 
 ### Story
