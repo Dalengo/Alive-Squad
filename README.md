@@ -35,7 +35,7 @@ fast and is easy unlike the other two which are complicated games, frustrating a
 long. Alive Squad is a mix of both.
 
 <p align="center">
-  <img src="Alive-Squad/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
   <img src="/Alive-Squad/Alive-Squad_Website/Images/getting-over-it.png" width="500" height="300">
 </p>
  
