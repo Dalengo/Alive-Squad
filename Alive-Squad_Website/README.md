@@ -61,11 +61,15 @@ Then we used the sprites to create animations and link them together.
   <img src="/Alive-Squad_Website/Images/palette.png" width="570" height="430"> 
 </p>
      
-### Main Menu
-Menu allows to quit the game, access to the settings (for the moment "FullScreen" and "Sound" are the two available settings), and allows you to choose your level by accessing the level menu (level 1 at the moment).
+### Main menu
+Main menu allows to quit the game, access to the settings (for the moment "FullScreen" and "Sound" are the two available settings), and allows you to choose your level by accessing the level menu (level 1 at the moment).
 <p align="center">
   <img src="/Alive-Squad_Website/Images/Menu_principale.PNG" width="750" height="500"> 
 </p>
+    
+### Pause menu
+Pause menu has 2 buttons "Resume" and "Main, the first one removes the pause and the game continue; the second one returns to the main menu and leaves the game in
+progress. It is also possible to access and exit the pause menu with the Escape key.
     
 ### Task list 
 - [x]  Make the first pictures
