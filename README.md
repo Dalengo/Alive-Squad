@@ -15,6 +15,7 @@ The story begins when a group of astronauts leave the overpopulated Earth in ord
 
 Alone, Philippe avoids being captured but found at the bottom of a cave. His goal is simple, free his comrades and find a way to repair the ship to return to Earth.
 
+    
 ### Gameplay 
 
 It is a platform game where the character must arrive at the end of each
