@@ -49,7 +49,7 @@ The camera has been implemented and follow the character. Elements and collision
 The camera follows the character with the CameraFollow script. For this we tell it at each frame to move towards the Player adding 2/10 of a second of delay for
 visual comfort.    
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/Game.png" width="900" height="300"> 
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/Game.png" width="900" height="300"> 
 </p>
     
 ### Modeling
