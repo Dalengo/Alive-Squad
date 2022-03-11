@@ -7,7 +7,8 @@ To do this, you will have to understand and adapt to your environment in order t
 <details>
 <summary>Introduction</summary>
 <br>
-
+Alive Squad is developed by Clément Cotte, Matis Lima Barros, Ange Mercoyrol--Dol and Yanis Martin.
+    
 ### Story
 
 The story begins when a group of astronauts leave the overpopulated Earth in order to find a new habitable planet. Their ship being damaged by a storm of asteroids, they crash on a planet, Zuri. But when trying to get out of the ship, they slip to the bottom of a crevasse. The majority of the crew gets captured by a mysterious species living on this planet. 
@@ -43,7 +44,7 @@ long. Alive Squad is a mix of both.
 <summary>Project progress: 1st Soutenance</summary>
 <br>
     
-### Progression 3/11/2022
+### Progression 03/11/2022
     
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
 
@@ -76,11 +77,3 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 </p>
    
 </details>
-
-### Task list 
-- [x]  Make the first pictures
-- [x]  Make the firt mouvements/interaction on Unity 
-- [x]  Make the website 
-- [ ]  Organize the github page
-- [ ]  Add ennemies
-    
