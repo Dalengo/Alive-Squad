@@ -42,6 +42,8 @@ long. Alive Squad is a mix of both.
 <details>
 <summary>Project progress: 1st Soutenance</summary>
 <br>
+    
+### Progression
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
 
 <p align="center">
