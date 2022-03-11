@@ -75,5 +75,10 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 <p align="center">
   <img src="/Alive-Squad_Website/Images/menu_pause.PNG" width="500" height="280"> 
 </p>
+    
+### Forecast for the future
+We will set up the first enemies and the end zones of the game
+in order to move on to the next levels. We will make sure that all the levels are finished by the next
+submission so that we can focus on multiplayer and the infinite path as well as refinements.
    
 </details>
