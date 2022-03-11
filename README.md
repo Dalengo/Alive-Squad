@@ -35,8 +35,8 @@ fast and is easy unlike the other two which are complicated games, frustrating a
 long. Alive Squad is a mix of both.
 
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
-  <img src="/Alive-Squad_Website/Images/getting-over-it.png" width="500" height="300">
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/getting-over-it.png" width="500" height="300">
 </p>
  
 ## First soutenance 
@@ -57,20 +57,20 @@ Tilesets were imported and then cut into blocks to build the levels. Then a test
 character. We then found graphics of astronaut video games on the internet on the internet that we used on the character. Then we managed the
 Then we used the sprites to create animations and link them together.
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/palette.png" width="570" height="430"> 
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/palette.png" width="570" height="430"> 
 </p>
      
 ### Main menu
 Main menu allows to quit the game, access to the settings (for the moment "FullScreen" and "Sound" are the two available settings), and allows you to choose your level by accessing the level menu (level 1 at the moment).
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/Menu_principale.PNG" width="750" height="500"> 
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/Menu_principale.PNG" width="750" height="500"> 
 </p>
     
 ### Pause menu
 Pause menu has 2 buttons "Resume" and "Main, the first one removes the pause and the game continue; the second one returns to the main menu and leaves the game in
 progress. It is also possible to access and exit the pause menu with the Escape key.
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/menu_pause.PNG" width="500" height="280"> 
+  <img src="/Alive-Squad/Alive-Squad_Website/Images/menu_pause.PNG" width="500" height="280"> 
 </p>
     
 ### Forecast for the future
