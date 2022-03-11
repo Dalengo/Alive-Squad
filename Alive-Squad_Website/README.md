@@ -45,7 +45,7 @@ long. Alive Squad is a mix of both.
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
 
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/Game.png" width="300" height="300"> 
+  <img src="/Alive-Squad_Website/Images/Game.png" width="900" height="300"> 
 </p>    
     
 ### Task list 
