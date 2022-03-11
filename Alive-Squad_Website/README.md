@@ -70,6 +70,9 @@ Main menu allows to quit the game, access to the settings (for the moment "FullS
 ### Pause menu
 Pause menu has 2 buttons "Resume" and "Main, the first one removes the pause and the game continue; the second one returns to the main menu and leaves the game in
 progress. It is also possible to access and exit the pause menu with the Escape key.
+<p align="center">
+  <img src="/Alive-Squad_Website/Images/menu_pause.PNG" width="600" height="350"> 
+</p>
     
 ### Task list 
 - [x]  Make the first pictures
