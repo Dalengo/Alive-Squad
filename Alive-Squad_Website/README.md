@@ -64,7 +64,7 @@ Then we used the sprites to create animations and link them together.
 ### Main Menu
 Menu allows to quit the game, access to the settings (for the moment "FullScreen" and "Sound" are the two available settings), and allows you to choose your level by accessing the level menu (level 1 at the moment).
 <p align="center">
-  <img src="/Alive-Squad_Website/Images/Menu_principale.PNG" width="910" height="630"> 
+  <img src="/Alive-Squad_Website/Images/Menu_principale.PNG" width="610" height="230"> 
 </p>
     
 ### Task list 
