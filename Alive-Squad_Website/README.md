@@ -44,6 +44,7 @@ long. Alive Squad is a mix of both.
 <br>
     
 ### Progression 3/11/2022
+    
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
 
 ### Camera
@@ -75,6 +76,7 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 </p>
    
 </details>
+
 ### Task list 
 - [x]  Make the first pictures
 - [x]  Make the firt mouvements/interaction on Unity 
