@@ -4,6 +4,10 @@ Back to the surface, Alive Squad immerses you in a universe mixing adventure and
     
 To do this, you will have to understand and adapt to your environment in order to survive! To win, you have to climb the floors by jumping with precision while staying alive.
 
+<details>
+<summary>How do I dropdown?</summary>
+<br>
+
 ### Story
 
 The story begins when a group of astronauts leave the overpopulated Earth in order to find a new habitable planet. Their ship being damaged by a storm of asteroids, they crash on a planet, Zuri. But when trying to get out of the ship, they slip to the bottom of a crevasse. The majority of the crew gets captured by a mysterious species living on this planet. 
@@ -40,10 +44,6 @@ long. Alive Squad is a mix of both.
 - [x]  Make the website 
 - [ ]  Organize the github page
 - [ ]  Add ennemies
-
-### Test
-<details>
-<summary>How do I dropdown?</summary>
-<br>
+    
 This is how you dropdown.
 </details>
