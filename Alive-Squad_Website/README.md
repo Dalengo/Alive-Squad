@@ -5,7 +5,7 @@ Back to the surface, Alive Squad immerses you in a universe mixing adventure and
 To do this, you will have to understand and adapt to your environment in order to survive! To win, you have to climb the floors by jumping with precision while staying alive.
 
 <details>
-## <summary>Introduction</summary>
+<summary>Introduction</summary>
 <br>
 
 ### Story
@@ -37,11 +37,16 @@ long. Alive Squad is a mix of both.
   <img src="/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
   <img src="/Alive-Squad_Website/Images/getting-over-it.png" width="500" height="300">
 </p>
+</details>
 
+<details>
+<summary>Project progress</summary>
+<br>
 ### Task list 
 - [x]  Make the first pictures
 - [x]  Make the firt mouvements/interaction on Unity 
 - [x]  Make the website 
 - [ ]  Organize the github page
 - [ ]  Add ennemies
+    
 </details>
