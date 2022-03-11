@@ -48,7 +48,15 @@ The camera has been implemented and follow the character. Elements and collision
 
 <p align="center">
   <img src="/Alive-Squad_Website/Images/Game.png" width="900" height="300"> 
-</p>    
+</p>
+    
+### Modeling
+Tilesets were imported and then cut into blocks to build the levels. Then a test platform was created to test the character's movements.
+character. We then found graphics of astronaut video games on the internet on the internet that we used on the character. Then we managed the
+Then we used the sprites to create animations and link them together.
+<p align="center">
+  <img src="/Alive-Squad_Website/Images/palette.png" width="570" height="430"> 
+</p>
     
 ### Task list 
 - [x]  Make the first pictures
