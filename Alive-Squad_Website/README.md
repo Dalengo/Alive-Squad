@@ -46,6 +46,9 @@ long. Alive Squad is a mix of both.
 ### Progression
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
 
+### Camera
+The camera follows the character with the CameraFollow script. For this we tell it at each frame to move towards the Player adding 2/10 of a second of delay for
+visual comfort.    
 <p align="center">
   <img src="/Alive-Squad_Website/Images/Game.png" width="900" height="300"> 
 </p>
@@ -57,7 +60,7 @@ Then we used the sprites to create animations and link them together.
 <p align="center">
   <img src="/Alive-Squad_Website/Images/palette.png" width="570" height="430"> 
 </p>
-    
+     
 ### Task list 
 - [x]  Make the first pictures
 - [x]  Make the firt mouvements/interaction on Unity 
