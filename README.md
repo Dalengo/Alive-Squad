@@ -4,11 +4,10 @@ Back to the surface, Alive Squad immerses you in a universe mixing adventure and
     
 To do this, you will have to understand and adapt to your environment in order to survive! To win, you have to climb the floors by jumping with precision while staying alive.
 
-<details>
-<summary>Introduction</summary>
-<br>
 Alive Squad is developed by Clément Cotte, Matis Lima Barros, Ange Mercoyrol--Dol and Yanis Martin.
-    
+
+## Introduction
+
 ### Story
 
 The story begins when a group of astronauts leave the overpopulated Earth in order to find a new habitable planet. Their ship being damaged by a storm of asteroids, they crash on a planet, Zuri. But when trying to get out of the ship, they slip to the bottom of a crevasse. The majority of the crew gets captured by a mysterious species living on this planet. 
@@ -39,12 +38,9 @@ long. Alive Squad is a mix of both.
   <img src="/Alive-Squad_Website/Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="/Alive-Squad_Website/Images/jump-king-9373-6874.png" width="500" height="300">
   <img src="/Alive-Squad_Website/Images/getting-over-it.png" width="500" height="300">
 </p>
-</details>
+ 
+## First soutenance 
 
-<details>
-<summary>Project progress: 1st Soutenance</summary>
-<br>
-    
 ### Progression 03/11/2022
     
 The camera has been implemented and follow the character. Elements and collision boxes needed for levels have been created. The character and his movement animations have been set up. The main menu and the pause menu have also been implemented.
@@ -81,5 +77,3 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 We will set up the first enemies and the end zones of the game
 in order to move on to the next levels. We will make sure that all the levels are finished by the next
 submission so that we can focus on multiplayer and the infinite path as well as refinements.
-   
-</details>
