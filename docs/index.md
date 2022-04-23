@@ -115,6 +115,6 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 <br>
 
 <button type="submit" onclick="window.open('Files/Cahier des charges AliveSquad.pdf')">Download!</button>
-    
+<a href="Files/Cahier des charges AliveSquad.pdf" download="">Download</a>
     
 </details>
