@@ -114,7 +114,7 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <summary> <h2> Download </h2> </summary>
 <br>
 
-<button type="submit" onclick="window.open('Images/menu_pause.PNG')">Download!</button>
+<button type="submit" onclick="window.open('Files/Cahier des charges AliveSquad.pdf')">Download!</button>
     
     
 </details>
