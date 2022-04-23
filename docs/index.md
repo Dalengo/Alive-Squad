@@ -114,9 +114,9 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <summary> <h2> Download </h2> </summary>
 <br>
 
-    <h3> PDf download </h3>
-Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a>
-Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
+<h3> PDf download </h3>
+Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
+Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
 
 
