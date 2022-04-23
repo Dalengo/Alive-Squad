@@ -1,6 +1,6 @@
 <head>
     
-    <h1> Alive Squad Test </h1>
+<h1> Alive Squad Test </h1>
     
 <style>
     
@@ -49,6 +49,7 @@ long. Alive Squad is a mix of both.
 </p>
 </details>
 
+<br>
 <details>
     <summary> <h2> Project progress: 1st Soutenance </h2> </summary>
     
@@ -91,11 +92,13 @@ submission so that we can focus on multiplayer and the infinite path as well as 
    
 </details>
 
+<br>
 <details>
     <summary> <h2> Project progress: 2nd Soutenance </h2> </summary>
 
 </details>
 
+<br>
 <details>
     <summary> <h2> Links </h2> </summary>
 
@@ -106,10 +109,10 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     
 </details>
 
+<br>
 <details>
     <summary> <h2> Download </h2> </summary>
 <h3> PDf download </h3>
-    
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
