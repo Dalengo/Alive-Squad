@@ -1,6 +1,6 @@
 <head>
     
-<h1> Alive Squad Test </h1>
+<h1> Alive Squad </h1>
     
 <style>
     
