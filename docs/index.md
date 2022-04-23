@@ -121,7 +121,7 @@ Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="
 
 
 <h3> Project download </h3>
-Normal version projet .zip: 
+Normal version projet .zip: <br>
 Lite version project .zip: 
     
 </details>
