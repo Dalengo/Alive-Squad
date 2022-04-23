@@ -4,7 +4,7 @@
     
 <style>
     
-    details {cursor: pointer;}
+details summary {cursor: pointer;}
     
 </style>
 </head>
