@@ -103,9 +103,17 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <summary> <h2> Links </h2> </summary>
 <br>
 
-    <h3> Softwares </h2>
+    <h3> Softwares </h3>
 Unity: https://unity.com/
-    <h3> Sources </h2>
+    <h3> Sources </h3>
 Youtube: https://youtube.com/
+    
+</details>
+
+<details>
+    <summary> <h2> Download </h2> </summary>
+<br>
+
+<a href="Images/Menu_principale.PNG" download="Test_download">Download</a>    
     
 </details>
