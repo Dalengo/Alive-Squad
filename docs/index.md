@@ -47,7 +47,8 @@ long. Alive Squad is a mix of both.
   <img src="Images/Doodle-Jump-2068.png" width="300" height="300"> <img src="Images/jump-king-9373-6874.png" width="500" height="300">
   <img src="Images/getting-over-it.png" width="500" height="300">
 </p>
-<br>
+
+<p style="white-space: pre-line"></p>
 </details>
 
 <details>
@@ -89,14 +90,14 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 We will set up the first enemies and the end zones of the game
 in order to move on to the next levels. We will make sure that all the levels are finished by the next
 submission so that we can focus on multiplayer and the infinite path as well as refinements.
-    <p style="white-space: pre-line"></p>
-   
+
+<p style="white-space: pre-line"></p>
 </details>
 
 <details>
     <summary> <h2> Project progress: 2nd Soutenance </h2> </summary>
 
-<br>
+<p style="white-space: pre-line"></p>
 </details>
 
 <details>
@@ -108,7 +109,6 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
 <p style="white-space: pre-line"></p>
-<p></p>
 </details>
 
 <details>
