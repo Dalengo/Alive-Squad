@@ -15,7 +15,6 @@ To do this, you will have to understand and adapt to your environment in order t
 
 <details>
     <summary> <h2> Introduction </h2> </summary>
-<br>
    
 Alive Squad is developed by Clément Cotte, Matis Lima Barros, Ange Mercoyrol--Dol and Yanis Martin.
     
@@ -52,7 +51,6 @@ long. Alive Squad is a mix of both.
 
 <details>
     <summary> <h2> Project progress: 1st Soutenance </h2> </summary>
-<br>
     
 <h3> Progression 03/11/2022 </h3>
     
@@ -95,7 +93,6 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 
 <details>
     <summary> <h2> Project progress: 2nd Soutenance </h2> </summary>
-<br>
 
 </details>
 
@@ -112,6 +109,7 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 <details>
     <summary> <h2> Download </h2> </summary>
 <h3> PDf download </h3>
+    
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
