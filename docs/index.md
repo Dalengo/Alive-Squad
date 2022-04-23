@@ -101,7 +101,6 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 
 <details>
     <summary> <h2> Links </h2> </summary>
-<br>
 
     <h3> Softwares </h3>
     Unity: <a href="https://unity.com/"> https://unity.com/ </a>
@@ -112,8 +111,6 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 
 <details>
     <summary> <h2> Download </h2> </summary>
-<br>
-
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
