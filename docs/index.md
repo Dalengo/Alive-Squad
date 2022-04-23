@@ -88,9 +88,8 @@ progress. It is also possible to access and exit the pause menu with the Escape 
 <h3> Forecast for the future </h3>
 We will set up the first enemies and the end zones of the game
 in order to move on to the next levels. We will make sure that all the levels are finished by the next
-submission so that we can focus on multiplayer and the infinite path as well as refinements.
+submission so that we can focus on multiplayer and the infinite path as well as refinements. <br>
    
-<br>
 </details>
 
 <details>
