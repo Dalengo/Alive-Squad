@@ -92,3 +92,9 @@ in order to move on to the next levels. We will make sure that all the levels ar
 submission so that we can focus on multiplayer and the infinite path as well as refinements.
    
 </details>
+
+<details>
+    <summary> <h2> Project progress: 2nd Soutenance </h2> </summary>
+<br>
+
+</details>
