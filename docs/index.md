@@ -114,7 +114,12 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <summary> <h2> Download </h2> </summary>
 <br>
 
-<button type="submit" onclick="window.open('Files/Cahier des charges AliveSquad.pdf')">Download!</button>
-<a href="Files/Cahier des charges AliveSquad.pdf" download="">Download</a>
+    <h3> PDf download </h3>
+Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a>
+Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
+Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
+
+
+<h3> Project download </3>    
     
 </details>
