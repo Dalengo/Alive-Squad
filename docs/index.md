@@ -107,7 +107,7 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <h3> Sources </h3>
     Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
-<br>
+<p style="white-space: pre-wrap"></p>
 </details>
 
 <details>
