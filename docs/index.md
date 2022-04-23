@@ -120,6 +120,6 @@ Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="
 Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
 
 
-<h3> Project download </3>    
+<h3> Project download </h3>    
     
 </details>
