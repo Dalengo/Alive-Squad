@@ -106,13 +106,15 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <h3> Softwares </h3>
     Unity: <a href="https://unity.com/"> https://unity.com/ </a>
     <h3> Sources </h3>
-    Youtube: <a "https://youtube.com/"> https://youtube.com/ </a>
+    Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
 </details>
 
 <details>
     <summary> <h2> Download </h2> </summary>
 <br>
- 
+
+<button type="submit" onclick="window.open('Images/menu_pause.PNG')">Download!</button>
+    
     
 </details>
