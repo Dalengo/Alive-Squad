@@ -129,7 +129,7 @@ Scene were linked to make the game functional
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
-Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
+Rapport de soutenance 2 pdf: <a href="Files/Rapport 2 AliveSquad.pdf" download="">click here</a>
 
 
 <h3> Project download </h3>
