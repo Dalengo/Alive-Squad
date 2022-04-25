@@ -106,7 +106,7 @@ First ennemies were added to add difficulty and more gameplay.
 <h3> Multyplayer </h3>
 The multiplayer has been added, there are still some bugs but it is functional.
 
-<h3> Scnes </h3>
+<h3> Scenes </h3>
 Scene were linked to make the game functional
     
 <p style="white-space: pre-line"></p>
@@ -118,6 +118,7 @@ Scene were linked to make the game functional
     <h3> Softwares </h3>
     Unity: <a href="https://unity.com/"> https://unity.com/ </a>
     <h3> Sources </h3>
+    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
     Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
 <p style="white-space: pre-line"></p>
