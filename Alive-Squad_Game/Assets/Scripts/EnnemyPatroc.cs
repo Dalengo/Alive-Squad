@@ -7,6 +7,7 @@ public class EnnemyPatroc : MonoBehaviour
     public SpriteRenderer graphics;
     private Transform target;
     private int desPoint = 0;
+    public int damageOnCollision;
 
     void Start()
     {
@@ -24,4 +25,14 @@ public class EnnemyPatroc : MonoBehaviour
             graphics.flipX = !graphics.flipX;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.transform.CompareTag("Player"))
+            {
+                PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+                playerHealth.TakeDamage(damageOnCollision);
+                
+            }
+        }
 }
