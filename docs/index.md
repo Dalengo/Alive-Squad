@@ -97,6 +97,18 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 <details>
     <summary> <h2> Project progress: 2nd Soutenance </h2> </summary>
 
+<h3> Character life and death bar </h3>
+Character life and death bar were added to make the game playlable 
+
+<h3> Combat system: enemies </h3>
+First ennemies were added to add difficulty and more gameplay. 
+
+<h3> Multyplayer </h3>
+The multiplayer has been added, there are still some bugs but it is functional.
+
+<h3> Scenes </h3>
+Scene were linked to make the game functional
+    
 <p style="white-space: pre-line"></p>
 </details>
 
@@ -106,6 +118,7 @@ submission so that we can focus on multiplayer and the infinite path as well as 
     <h3> Softwares </h3>
     Unity: <a href="https://unity.com/"> https://unity.com/ </a>
     <h3> Sources </h3>
+    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
     Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
 <p style="white-space: pre-line"></p>
@@ -116,7 +129,7 @@ submission so that we can focus on multiplayer and the infinite path as well as 
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
-Rapport de soutenance 2 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a>
+Rapport de soutenance 2 pdf: <a href="Files/Rapport 2 AliveSquad.pdf" download="">click here</a>
 
 
 <h3> Project download </h3>
