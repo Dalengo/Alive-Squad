@@ -4,9 +4,8 @@ using UnityEngine;
 public class EnnemyBullet : MonoBehaviour
 {
 
-    public float dieTime, damage;
-     public int speed;
-     public GameObject target;
+    public float dieTime;
+    public int damage;
     // Start is called before the first frame update
     IEnumerator CountDownTimer()
     {
@@ -16,7 +15,7 @@ public class EnnemyBullet : MonoBehaviour
     void Start()
     {
         StartCoroutine(CountDownTimer());
-        transform.position = target.transform.position;
+        //transform.position = target.transform.position;
     }
 
     // Update is called once per frame
@@ -27,6 +26,11 @@ public class EnnemyBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        if(col.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = col.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damage);
+        }
         die();
     }
 

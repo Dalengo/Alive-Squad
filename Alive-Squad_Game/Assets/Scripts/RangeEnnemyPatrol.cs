@@ -33,7 +33,7 @@ public class RangeEnnemyPatrol : MonoBehaviour
                 }
         if(canshoot)
         {
-            //StartCoroutine(Shoot());
+            StartCoroutine(Shoot());
         }
     }
 
@@ -50,8 +50,8 @@ public class RangeEnnemyPatrol : MonoBehaviour
     {
         canshoot = false;
         yield return new WaitForSeconds(TimeBetweenShoot);
-        GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
-        //newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * transform.position.x * Time.fixedDeltaTime, 0f);
+        GameObject newBullet = Instantiate(bullet, shootPos.position, shootPos.rotation);
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-shootSpeed, 0f);
         
         canshoot = true;
     }
