@@ -7335,7 +7335,6 @@ MonoBehaviour:
   - {fileID: 49811416}
   - {fileID: 438668178}
   - {fileID: 1794228166}
-  - {fileID: 66285929921288721, guid: d016ebcb52c20fa4fa67c7bd8be5bf4e, type: 3}
 --- !u!114 &1794228170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7348,6 +7347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59bf38557b4e244c8045e508cc91c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  username: Player
 --- !u!114 &1794228171
 MonoBehaviour:
   m_ObjectHideFlags: 0

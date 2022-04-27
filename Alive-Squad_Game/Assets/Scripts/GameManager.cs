@@ -35,16 +35,7 @@ public class GameManager : MonoBehaviour
 
     public static Player GetPlayer(string playerId)
     {
-        try
-        {
-            return players[playerId];
-        }
-        catch (KeyNotFoundException)
-        {
-            Debug.LogError("Objet pas dans le dictionnaire");
-            throw new System.Exception("fe");
-        }
-
+       return players[playerId];
     }
 
     public static Player[] GetAllPlayers()
