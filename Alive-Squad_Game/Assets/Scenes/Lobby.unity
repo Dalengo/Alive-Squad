@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1567763262051448313, guid: 2f5d846f850d23043a2904f942c0e147, type: 3}
       propertyPath: onlineScene
-      value: Assets/Scenes/Level 01.unity
+      value: Assets/Scenes/New Level 01.unity
       objectReference: {fileID: 0}
     - target: {fileID: 1567763262051448313, guid: 2f5d846f850d23043a2904f942c0e147, type: 3}
       propertyPath: offlineScene
