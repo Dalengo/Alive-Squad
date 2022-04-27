@@ -940,7 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingWindow: {fileID: 1096527741}
   levelsWindow: {fileID: 951426310}
-  LevelToLoad: SampleScene
+  LevelToLoad: Lobby
 --- !u!114 &757079420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c51fd8814ada64a9cb7fc7b4e9e81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: SampleScene
+  LevelToLoad: Lobby
 --- !u!114 &951426313
 MonoBehaviour:
   m_ObjectHideFlags: 0
