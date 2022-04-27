@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5006948629256992355}
   - component: {fileID: 6701156122106759717}
   - component: {fileID: 381321041323788627}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6171345720541069123}
   - component: {fileID: 6237832149655162382}
   - component: {fileID: 1575259048085767197}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 5736915293185055942}
   - component: {fileID: 2965518765444380927}
   - component: {fileID: 5647327376159295602}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 78560305495655814}
   - component: {fileID: 6264585851582287224}
   - component: {fileID: 3891005267242970208}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 5867130294267860342}
   - component: {fileID: 9082219781548049304}
   - component: {fileID: 4265272234868229898}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: PauseTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 799697215354598513}
   - component: {fileID: 2326022180266180338}
   - component: {fileID: 2407236455611852653}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 8435066830567004532}
   - component: {fileID: 7203530518457401430}
   - component: {fileID: 4599042956783423556}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 6307942611305846550}
   - component: {fileID: 8649376583455478354}
   - component: {fileID: 2665672889130384176}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 1886790770335609383}
   - component: {fileID: 8094851869949713732}
   - component: {fileID: 5395088993862819949}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 5919343337228490199}
   - component: {fileID: 2222078228368646718}
   - component: {fileID: 6236248515134408464}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,6 +987,7 @@ GameObject:
   - component: {fileID: -3578929936069549224}
   - component: {fileID: 9190583895218161769}
   - component: {fileID: 6485714859046055225}
+  - component: {fileID: 7015385623188931574}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1226,6 +1227,21 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 4599042956783423556}
+--- !u!114 &7015385623188931574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370038052421430609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59bf38557b4e244c8045e508cc91c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  username: Player
 --- !u!1 &8370038053812821315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1336,7 @@ GameObject:
   - component: {fileID: 8315009421017804301}
   - component: {fileID: 859799889937790474}
   - component: {fileID: 2076162714677689836}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
