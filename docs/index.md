@@ -133,6 +133,6 @@ Rapport de soutenance 2 pdf: <a href="Files/Rapport 2 AliveSquad.pdf" download="
 
 
 <h3> Project download </h3>
-Normal version projet .zip: git clone https://github.com/Yanis1m/Alive-Squad.git <br>
+Normal version projet: git clone https://github.com/Yanis1m/Alive-Squad.git <br>
     
 </details>
