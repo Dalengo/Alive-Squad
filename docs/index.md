@@ -118,7 +118,7 @@ Scene were linked to make the game functional
     <h3> Softwares </h3>
     Unity: <a href="https://unity.com/"> https://unity.com/ </a>
     <h3> Sources </h3>
-    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a> <br>
+    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
     Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
     
 <p style="white-space: pre-line"></p>
@@ -133,6 +133,7 @@ Rapport de soutenance 2 pdf: <a href="Files/Rapport 2 AliveSquad.pdf" download="
 
 
 <h3> Project download </h3>
-Normal version projet: git clone https://github.com/Yanis1m/Alive-Squad.git <br>
+Normal version projet .zip: <br>
+Lite version project .zip: 
     
 </details>
