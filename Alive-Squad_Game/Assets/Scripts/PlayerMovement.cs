@@ -26,7 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        if (PauseMenu.gameIsPaused)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetFloat("Speed", 0);
+            return;
+        }
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -42,7 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (PauseMenu.gameIsPaused)
+        {
+            MovePlayer(0);
+            return;
+        }
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         MovePlayer(horizontalMovement);
         
@@ -50,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer(float _horizontalMovement)
     {
+       
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity,.05f);
         if (isJumping)

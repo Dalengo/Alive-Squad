@@ -1,23 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class PauseMenu : MonoBehaviour
+using Mirror;
+public class PauseMenu : NetworkBehaviour
 {
-    
+
     public static bool gameIsPaused = false;
 
-    /*void Pause()
-    {
-        //PlayerMovement.instance.enabled = false; 
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
-        gameIsPaused = true;
-    }*/
+    private NetworkManager networkManager;
 
-    /*public void LoadMainMenu()
+
+    public void Start()
     {
-        DontDestroyOnLoadScene.instance.RemoveFromDontDestroyOnLoad();
-        Resume();
-        SceneManager.LoadScene("MainMenu");
-    }*/ 
-    // il faut merge avec la version avec le main menu pour que ça marche
+        networkManager = NetworkManager.singleton;
+    }
+
+    public void LeaveRoomButton()
+    {
+        if (isClientOnly)
+        {
+            networkManager.StopClient();
+        }
+        else
+        {
+            networkManager.StopHost();
+        }
+    }
+
+
 }

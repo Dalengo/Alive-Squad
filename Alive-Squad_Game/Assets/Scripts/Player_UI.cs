@@ -1,9 +1,8 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class Player_UI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
-
     void Start()
     {
         PauseMenu.gameIsPaused = false;
