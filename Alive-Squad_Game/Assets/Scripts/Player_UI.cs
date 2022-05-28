@@ -19,6 +19,6 @@ public class Player_UI : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        PauseMenu.gameIsPaused = pauseMenu.activeSelf;
+        
     }
 }
