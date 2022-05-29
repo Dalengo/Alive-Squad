@@ -396,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1026385330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5943a85d27d0fdc4ca011d4f8468ca36, type: 3}
+  m_Script: {fileID: 11500000, guid: 90bcf0a841845c4478855bc4550e3d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lobbySceneName: Lobby
@@ -499,7 +499,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1026385331}
         m_TargetAssemblyTypeName: UserAccountManager, Assembly-CSharp
-        m_MethodName: LogIn
+        m_MethodName: Login
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1511214477}
