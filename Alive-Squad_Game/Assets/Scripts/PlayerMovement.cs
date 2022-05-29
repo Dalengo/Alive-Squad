@@ -26,8 +26,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+        if (PauseMenu.isOn)
+        {
+            if (Cursor.lockState != CursorLockMode.None)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            return;
+        }
+
+        if (Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;
@@ -44,12 +57,20 @@ public class PlayerMovement : MonoBehaviour
     {
         
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        if (PauseMenu.isOn)
+        {
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("isJumping", false);
+            MovePlayer(0f);
+            return;
+        }
         MovePlayer(horizontalMovement);
         
     }
 
     void MovePlayer(float _horizontalMovement)
     {
+        
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity,.05f);
         if (isJumping)

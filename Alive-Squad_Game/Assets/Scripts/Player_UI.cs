@@ -6,7 +6,7 @@ public class Player_UI : MonoBehaviour
 
     void Start()
     {
-        PauseMenu.gameIsPaused = false;
+        PauseMenu.isOn = false;
     }
     private void Update()
     {
@@ -19,6 +19,6 @@ public class Player_UI : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        
+        PauseMenu.isOn = pauseMenu.activeSelf;
     }
 }
