@@ -1502,6 +1502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  isInvincible: 0
+  graphics: {fileID: 8370038052421430621}
   healthBar: {fileID: 4599042956783423556}
 --- !u!114 &5280861595444513305
 MonoBehaviour:
