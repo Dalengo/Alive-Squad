@@ -91,8 +91,9 @@ GameObject:
   - component: {fileID: 6914101483044852800}
   - component: {fileID: 9211155786271840943}
   - component: {fileID: 3170749165632305215}
+  - component: {fileID: 4880261688116953654}
   m_Layer: 7
-  m_Name: Canvas
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,6 +180,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4880261688116953654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131432156520743319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd155c73bec59c44875c7c008965424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameText: {fileID: 2408531816423004617}
+  player: {fileID: 5280861595444513305}
 --- !u!1 &3649843380490845619
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000000026077}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 3.2665, y: 0.732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9223362307664518672
@@ -1247,6 +1262,7 @@ GameObject:
   - component: {fileID: -3578929936069549224}
   - component: {fileID: 9190583895218161769}
   - component: {fileID: 6485714859046055225}
+  - component: {fileID: 5280861595444513305}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1487,6 +1503,21 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 4599042956783423556}
+--- !u!114 &5280861595444513305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370038052421430609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda2d2aba35aaaf4ca8436833a485aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  username: Player
 --- !u!1 &8370038053812821315
 GameObject:
   m_ObjectHideFlags: 0

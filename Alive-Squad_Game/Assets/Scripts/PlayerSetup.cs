@@ -19,11 +19,38 @@ public class PlayerSetup : NetworkBehaviour
         {
             sceneCamera = Camera.main;
             sceneCamera.gameObject.SetActive(false);
+
+            string username = UserAccountManager.LoggedInUsername;
+            CmdSetUsername(transform.name, username);
         }
+    }
+
+    [Command]
+    void CmdSetUsername(string playerID,string username)
+    {
+        Player player = GameManager.GetPlayer(playerID);
+        if (player != null)
+        {
+            Debug.Log(username + " has joined");
+            player.username = username;
+        }
+    }
+
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        string netId = GetComponent<NetworkIdentity>().netId.ToString();
+        Player player = GetComponent<Player>();
+        GameManager.RegisterPlayer(netId,player);
     }
 
     private void OnDisable()
     {
-        sceneCamera.gameObject.SetActive(true);
+        if (sceneCamera != null)
+        {
+            sceneCamera.gameObject.SetActive(true);
+        }
+        GameManager.UnregisterPlayer(transform.name);
     }
 }
