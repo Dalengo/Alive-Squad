@@ -19,6 +19,7 @@ public class PlayerMovement : NetworkBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public Canvas healthBarPlate;
 
     private Vector3 velocity = Vector3.zero;
     
@@ -68,7 +69,7 @@ public class PlayerMovement : NetworkBehaviour
         }
         if (horizontalMovement>0.1f && flipped || horizontalMovement < -0.1f && !flipped)
         {
-            Flip(rb.velocity.x);
+            Flip();
         }
         MovePlayer(horizontalMovement);
         
@@ -86,11 +87,14 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    void Flip(float _velocity)
+    void Flip()
     {
         Vector3 currentscale = gameObject.transform.localScale;
         currentscale.x *= -1;
         gameObject.transform.localScale = currentscale;
+        currentscale = healthBarPlate.transform.localScale;
+        currentscale.x *= -1;
+        healthBarPlate.transform.localScale = currentscale;
         flipped = !flipped;
     }
 
