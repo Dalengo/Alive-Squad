@@ -11,8 +11,7 @@ public class Player : NetworkBehaviour
         protected set => _isDead = value;
     }
 
-    [SerializeField]
-    private Camera cam;
+    public Camera camera;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -59,7 +58,11 @@ public class Player : NetworkBehaviour
         {
             collider.enabled=true;
         }
-        
+        if (isLocalPlayer)
+        {
+            GameManager.instance.SetSceneCameraActive(false);
+        }
+
     }
 
     private void Update()
@@ -112,9 +115,16 @@ public class Player : NetworkBehaviour
             rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         }
         Debug.Log(transform.name + "a été éliminé");
-        cam.enabled = false;
+        //changement de caméra
+        if (isLocalPlayer)
+        {
+            GameManager.instance.SetSceneCameraActive(true);
+        }
         
-        SpectatorMode.enabled = true;
+        
+       
+
+        //SpectatorMode.enabled = true;
     }
    
         

@@ -8,9 +8,9 @@ public class Spectator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.enabled = true;
+        
         cam = GetCamera(i);
-        cam.enabled = true;
+        //cam.enabled = true;
     }
 
     private Camera GetCamera(int i)
@@ -24,9 +24,9 @@ public class Spectator : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            {
+        {
             CameraSuivante();
-            }
+        }
         
     }
     
@@ -35,8 +35,11 @@ public class Spectator : MonoBehaviour
         i++;
         cam.enabled = false;
         cam = GetCamera(i);
+        if (cam != null)
+        {
+            cam.enabled = true;
+        }
         
-        cam.enabled = true;
         
     }
 }

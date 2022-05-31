@@ -282,6 +282,7 @@ MonoBehaviour:
   - {fileID: 1269642039}
   - {fileID: 172572138}
   graphics: {fileID: 425094040}
+  damageOnCollision: 0
 --- !u!61 &425094039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -457,7 +458,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7281,8 +7282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1794228168}
   - component: {fileID: 1794228167}
-  - component: {fileID: 1794228169}
   - component: {fileID: 1794228170}
+  - component: {fileID: 1794228169}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7327,15 +7328,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794228166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420295543026277458f2ecb319913a4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cb9f8573b8529c48954a82ddda2c6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 519420028}
-  - {fileID: 49811416}
-  - {fileID: 438668178}
-  - {fileID: 1794228166}
-  - {fileID: 66285929921288721, guid: d016ebcb52c20fa4fa67c7bd8be5bf4e, type: 3}
+  sceneCamera: {fileID: 519420028}
 --- !u!114 &1794228170
 MonoBehaviour:
   m_ObjectHideFlags: 0

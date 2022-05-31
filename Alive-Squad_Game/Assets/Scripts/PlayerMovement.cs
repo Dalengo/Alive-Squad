@@ -31,19 +31,7 @@ public class PlayerMovement : NetworkBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
-        if (PauseMenu.isOn)
-        {
-            if (Cursor.lockState != CursorLockMode.None)
-            {
-                Cursor.lockState = CursorLockMode.None;
-            }
-            return;
-        }
-
-        if (Cursor.lockState != CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+       
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

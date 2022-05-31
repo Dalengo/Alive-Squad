@@ -5,7 +5,7 @@ public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField]
     Behaviour[] componentsToDisable;
-    Camera sceneCamera;
+
     private void Start()
     {
         if (!isLocalPlayer)
@@ -17,9 +17,6 @@ public class PlayerSetup : NetworkBehaviour
         }
         else
         {
-            sceneCamera = Camera.main;
-            sceneCamera.gameObject.SetActive(false);
-
             string username = UserAccountManager.LoggedInUsername;
             CmdSetUsername(transform.name, username);
         }
@@ -48,10 +45,7 @@ public class PlayerSetup : NetworkBehaviour
 
     private void OnDisable()
     {
-        if (sceneCamera != null)
-        {
-            sceneCamera.gameObject.SetActive(true);
-        }
+        GameManager.instance.SetSceneCameraActive(true);
         GameManager.UnregisterPlayer(transform.name);
     }
 }
