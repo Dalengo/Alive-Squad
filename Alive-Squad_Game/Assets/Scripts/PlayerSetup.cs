@@ -23,6 +23,7 @@ public class PlayerSetup : NetworkBehaviour
             string username = UserAccountManager.LoggedInUsername;
             CmdSetUsername(transform.name, username);
         }
+        GetComponent<Player>().Setup();
     }
 
     [Command]

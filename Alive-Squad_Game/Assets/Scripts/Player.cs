@@ -17,35 +17,63 @@ public class Player : NetworkBehaviour
     [SyncVar]
     private float currentHealth;
 
+    [SerializeField]
+    private Behaviour[] disableOnDeath;
+    private bool[] wasEnabledOnStart;
+
     [SyncVar]
     public string username = "Player";
 
-    private void Awake()
+    public void Setup()
     {
+        wasEnabledOnStart = new bool[disableOnDeath.Length];
+        for(int i = 0; i < disableOnDeath.Length; i++)
+        {
+            wasEnabledOnStart[i] = disableOnDeath[i].enabled;
+        }
         SetDefaults();
     }
 
     private void SetDefaults()
     {
+        isDead = false;
         currentHealth = maxHealth;
+        for(int i=0; i<disableOnDeath.Length; i++)
+        {
+            disableOnDeath[i].enabled = wasEnabledOnStart[i];
+        }
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled=true;
+        }
     }
+
     [ClientRpc]
     public void RPcTakeDamage(float amount)
     {
-        if (isDead)
+        if (!isDead)
         {
-            return;
-        }
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            Die();
+            currentHealth -= amount;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
     private void Die()
     {
         isDead = true;
+        for (int i = 0; i < disableOnDeath.Length; i++)
+        {
+            disableOnDeath[i].enabled = false;
+        }
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
     }
 
 
