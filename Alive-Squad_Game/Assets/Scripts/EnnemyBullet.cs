@@ -29,7 +29,7 @@ public class EnnemyBullet : MonoBehaviour
         if(col.transform.CompareTag("Player"))
         {
             PlayerHealth playerHealth = col.transform.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(damage);
+            //playerHealth.TakeDamage(damage);
         }
         die();
     }
