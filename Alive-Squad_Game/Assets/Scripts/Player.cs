@@ -12,6 +12,9 @@ public class Player : NetworkBehaviour
     }
 
     [SerializeField]
+    private Camera cam;
+
+    [SerializeField]
     private float maxHealth = 100f;
     
     [SyncVar]
@@ -19,7 +22,12 @@ public class Player : NetworkBehaviour
 
     [SerializeField]
     private Behaviour[] disableOnDeath;
+    [SerializeField]
+    private GameObject[] disableGameObjectsOnDeath;
     private bool[] wasEnabledOnStart;
+
+    [SerializeField]
+    private Behaviour SpectatorMode;
 
     [SyncVar]
     public string username = "Player";
@@ -42,10 +50,26 @@ public class Player : NetworkBehaviour
         {
             disableOnDeath[i].enabled = wasEnabledOnStart[i];
         }
-        Collider collider = GetComponent<Collider>();
+        for (int i = 0; i < disableGameObjectsOnDeath.Length; i++)
+        {
+            disableGameObjectsOnDeath[i].SetActive(true);
+        }
+        Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
             collider.enabled=true;
+        }
+        
+    }
+
+    private void Update()
+    {
+        if (isLocalPlayer)
+        {
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                RPcTakeDamage(40f);
+            }
         }
     }
 
@@ -60,21 +84,40 @@ public class Player : NetworkBehaviour
                 Die();
             }
         }
+        Debug.Log(transform.name + "a maintenant : " + currentHealth + "points de vies.");
     }
 
     private void Die()
     {
         isDead = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = false;
         }
-        Collider collider = GetComponent<Collider>();
+        for (int i = 0; i < disableGameObjectsOnDeath.Length; i++)
+        {
+            disableGameObjectsOnDeath[i].SetActive(false);
+        }
+
+        Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
             collider.enabled = false;
         }
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        if (rigidbody != null)
+        {
+            rigidbody.simulated = false;
+            rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        }
+        Debug.Log(transform.name + "a été éliminé");
+        cam.enabled = false;
+        
+        SpectatorMode.enabled = true;
     }
+   
+        
 
 
 }
