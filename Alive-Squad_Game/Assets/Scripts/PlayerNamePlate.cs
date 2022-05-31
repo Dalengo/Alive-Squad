@@ -11,6 +11,8 @@ public class PlayerNamePlate : MonoBehaviour
     [SerializeField]
     private Player player;
 
+    
+
 
     // Update is called once per frame
     void Update()

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public float moveSpeed;
     public float jumpforce;
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask collisionLayers;
+
+    private bool flipped = false;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -46,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
        
-        Flip(rb.velocity.x);
         float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetBool("isJumping", isJumping);
         animator.SetFloat("Speed", characterVelocity);
@@ -63,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isJumping", false);
             MovePlayer(0f);
             return;
+        }
+        if (horizontalMovement>0.1f && flipped || horizontalMovement < -0.1f && !flipped)
+        {
+            Flip(rb.velocity.x);
         }
         MovePlayer(horizontalMovement);
         
@@ -82,14 +88,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Flip(float _velocity)
     {
-        if (_velocity > 0.1f)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (_velocity < -0.1f)
-        {
-            spriteRenderer.flipX = false;
-        }
+        Vector3 currentscale = gameObject.transform.localScale;
+        currentscale.x *= -1;
+        gameObject.transform.localScale = currentscale;
+        flipped = !flipped;
     }
 
     private void OnDrawGizmos()
