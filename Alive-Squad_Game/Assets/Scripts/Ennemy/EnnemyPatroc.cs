@@ -26,12 +26,12 @@ public class EnnemyPatroc : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.CompareTag("Player"))
         {
-            if(collision.CompareTag("Player"))
-            {
-                PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-                playerHealth.TakeDamage(damageOnCollision);
-            }
+            Player player = collision.transform.GetComponent<Player>();
+            player.RPcTakeDamage(damageOnCollision);
         }
+    }
 }

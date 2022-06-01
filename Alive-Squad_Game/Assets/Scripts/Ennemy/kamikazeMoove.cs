@@ -40,8 +40,8 @@ public class kamikazeMoove : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-                playerHealth.TakeDamage(damageOnCollision);
+                Player player = collision.transform.GetComponent<Player>();
+                player.RPcTakeDamage(damageOnCollision);
                 Destroy(transform.gameObject);
             }
         }

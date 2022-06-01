@@ -1,5 +1,6 @@
 using UnityEngine;
 using Mirror;
+using System.Collections;
 
 public class Player : NetworkBehaviour
 {
@@ -12,6 +13,11 @@ public class Player : NetworkBehaviour
     }
 
     public Camera camera;
+    public bool isInvincible = false;
+    private float InvincibilityFlashDelay = 0.15f;
+    public float InvincibilityTimeAfterHit = 3f;
+    public SpriteRenderer graphics;
+    public HealthBar healthBarMulti;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -82,22 +88,42 @@ public class Player : NetworkBehaviour
     [ClientRpc]
     public void RPcTakeDamage(float amount)
     {
-        if (!isDead)
+        if (!isDead && !isInvincible)
         {
             currentHealth -= amount;
             if (currentHealth <= 0)
             {
                 Die();
             }
+            healthBarMulti.SetHealth((int)currentHealth);
+            isInvincible = true;
+            StartCoroutine(InvincibilityFlash());
+            StartCoroutine(HandleInvincibleDelay());
         }
         Debug.Log(transform.name + "a maintenant : " + currentHealth + "points de vies.");
+    }
+
+    private IEnumerator InvincibilityFlash()
+    {
+        while(isInvincible)
+        {
+            graphics.color = new Color(1f,1f,1f,0f);
+            yield return new WaitForSeconds(InvincibilityFlashDelay);
+            graphics.color = new Color(1f,1f,1f,1f);
+            yield return new WaitForSeconds(InvincibilityFlashDelay);
+        }
+    }
+    private IEnumerator HandleInvincibleDelay()
+    {
+        yield return new WaitForSeconds(InvincibilityTimeAfterHit);
+        isInvincible = false;
     }
 
     private void Die()
     {
         isDead = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        //désactivation des Behaviour y compris la caméra du joueur
+        //dï¿½sactivation des Behaviour y compris la camï¿½ra du joueur
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = false;
@@ -118,8 +144,8 @@ public class Player : NetworkBehaviour
             rigidbody.simulated = false;
             rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         }
-        Debug.Log(transform.name + "a été éliminé");
-        //changement de caméra
+        Debug.Log(transform.name + "a ï¿½tï¿½ ï¿½liminï¿½");
+        //changement de camï¿½ra
 
         GameManager.PlayerDesactivated(this);
         if (GameManager.AllPlayers.Count > 0)

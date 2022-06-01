@@ -56,20 +56,19 @@ public class BossHealth : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("test");
             TakeDamage(1);
-            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            Player player = collision.transform.GetComponent<Player>(); //need to edit or add isinvicible
             if (currentHealth>0)
             {
-                StartCoroutine(HandleInvincibleDelay2(playerHealth));
+                StartCoroutine(HandleInvincibleDelay2(player));
             }
         }
     }
 
-    public IEnumerator HandleInvincibleDelay2(PlayerHealth playerHealth)
+    public IEnumerator HandleInvincibleDelay2(Player player)
     {
-        playerHealth.isInvincible = true;
+        player.isInvincible = true;
         yield return new WaitForSeconds(1);
-        playerHealth.isInvincible = false;
+        player.isInvincible = false;
     }
 }
