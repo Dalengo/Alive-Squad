@@ -6,14 +6,19 @@ public class RangeEnnemyPatrol : MonoBehaviour
     public float speed;
     public float TimeBetweenShoot;
     public float shootSpeed;
-    private bool canshoot;
     public GameObject bullet;
     public Transform shootPos;
     public Transform[] waypoints;
     public SpriteRenderer graphics;
-    private Transform target;
     private int desPoint = 0;
     public int damageOnCollision;
+    private Transform target; 
+    public float range;
+    private float bestdisttoplayer = 999;
+    public bool canshoot;
+    private int direction;
+    private GameObject[] objs;
+    private Transform target2;
 
     void Start()
     {
@@ -31,9 +36,31 @@ public class RangeEnnemyPatrol : MonoBehaviour
                     target = waypoints[desPoint];
                     graphics.flipX = !graphics.flipX;
                 }
-        if(canshoot)
+
+        objs = GameObject.FindGameObjectsWithTag("Player");
+        if (objs.Length > 0)
         {
-            StartCoroutine(Shoot());
+            foreach(GameObject ob in objs)
+            {
+                if (Vector2.Distance(transform.position, ob.transform.position) < bestdisttoplayer)
+                {
+                    bestdisttoplayer = Vector2.Distance(transform.position, ob.transform.position);
+                    target2 = ob.transform;
+                }
+            }
+            if (transform.position.x < target2.position.x)
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = -1;
+            }
+            if (bestdisttoplayer <= range && canshoot)
+            {
+                StartCoroutine(Shoot());
+                bestdisttoplayer = 999;
+            }
         }
     }
 
@@ -51,8 +78,7 @@ public class RangeEnnemyPatrol : MonoBehaviour
         canshoot = false;
         yield return new WaitForSeconds(TimeBetweenShoot);
         GameObject newBullet = Instantiate(bullet, shootPos.position, shootPos.rotation);
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-shootSpeed, 0f);
-        
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * direction, 0f);
         canshoot = true;
     }
 }
