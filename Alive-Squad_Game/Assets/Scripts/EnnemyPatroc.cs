@@ -5,7 +5,7 @@ public class EnnemyPatroc : MonoBehaviour
     public float speed;
     public Transform[] waypoints;
     public SpriteRenderer graphics;
-    private Transform target;
+    public Transform target;
     private int desPoint = 0;
     public int damageOnCollision;
 
@@ -32,7 +32,6 @@ public class EnnemyPatroc : MonoBehaviour
             {
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(damageOnCollision);
-                
             }
         }
 }
