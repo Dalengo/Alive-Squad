@@ -1,6 +1,7 @@
 using UnityEngine;
+using Mirror;
 
-public class Spectator : MonoBehaviour
+public class Spectator : NetworkBehaviour
 {
     int i = 0;
     Camera cam;
@@ -8,22 +9,28 @@ public class Spectator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         cam = GetCamera(i);
-        //cam.enabled = true;
+        if (cam != null)
+        {
+            cam.enabled = true;
+        }
     }
 
     private Camera GetCamera(int i)
     {
         Player player = GameManager.AllPlayers[i];
-        Camera cam = player.GetComponent<Camera>();
-        return cam;
+        
+        return player.camera;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
         {
             CameraSuivante();
         }
@@ -35,11 +42,6 @@ public class Spectator : MonoBehaviour
         i++;
         cam.enabled = false;
         cam = GetCamera(i);
-        if (cam != null)
-        {
-            cam.enabled = true;
-        }
-        
-        
+       
     }
 }

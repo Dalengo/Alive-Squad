@@ -1901,6 +1901,7 @@ MonoBehaviour:
   - {fileID: 8370038053812821326}
   disableGameObjectsOnDeath:
   - {fileID: 2131432156520743319}
+  - {fileID: 8370038053812821315}
   SpectatorMode: {fileID: 1913841299466898377}
   username: Player
 --- !u!114 &4097284403294459459

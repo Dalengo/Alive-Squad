@@ -7,7 +7,12 @@ public class GameManager : MonoBehaviour
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
-    private static List<Player> _AllPlayers;
+    private static List<Player> _AllPlayers=new List<Player>();
+
+    public static List<Player> AllPlayers
+    {
+        get => _AllPlayers;
+    }
 
     private static List<Camera> allCams;
 
@@ -30,7 +35,6 @@ public class GameManager : MonoBehaviour
     {
         List<Camera> allCams= new List<Camera>();
         _AllPlayers=GetAllPlayer();
-        Debug.Log("player+"+_AllPlayers.Count);
         foreach (Player player in _AllPlayers)
         {
             Camera camerab = player.camera;
@@ -38,7 +42,6 @@ public class GameManager : MonoBehaviour
             if (camerab != null)
             {
                 allCams.Add(camerab);
-                Debug.Log("Add");
             }
             else
             {
@@ -53,9 +56,6 @@ public class GameManager : MonoBehaviour
     {
         string playerId = playerIdPrefix + netID;
         players.Add(playerId, player);
-        Debug.Log(playerId + " is added");
-        Debug.Log(players.Count + " is Count");
-
         player.transform.name = playerId;
     }
 
@@ -77,32 +77,44 @@ public class GameManager : MonoBehaviour
         }
         sceneCamera.SetActive(isActive);
 
-        allCams = CameraAll();
-        sceneCamera.SetActive(false);
-        allCams[1].enabled = true;
-        Debug.Log(allCams.Count);
+        //allCams = CameraAll();
+        //sceneCamera.SetActive(false);
+        //allCams[1].enabled = true;
     }
 
     private static List<Player> GetAllPlayer()
     {
         List<Player> AllPlayers = new List<Player>();
-        Debug.Log("players1 "+players.Count);
         foreach (KeyValuePair<string, Player> playerGet in players)
         {
             AllPlayers.Add(playerGet.Value);
         }
         return AllPlayers;
     }
-    public static List<Player> AllPlayers
-    {
-        get=> _AllPlayers;
-    }
-    public void PlayerDesactivated(Player player)
+    
+    public static void PlayerDesactivated(Player player)
     {
         _AllPlayers.Remove(player);
+        if (_AllPlayers.Count == 0)
+        {
+            GOver();
+            return;
+        }
     }
-    public void PlayerActivated(Player player)
+    public static void PlayerActivated(Player player)
     {
+        Debug.Log(player.name+" a été ajouté à _AllPlayer");
+        if (player == null)
+        {
+            Debug.Log("Player Null");
+        }
+        
         _AllPlayers.Add(player);
+        
+    }
+
+    public static void GOver()
+    {
+        Debug.Log("Fin de partie");
     }
 }

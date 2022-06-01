@@ -8,7 +8,7 @@ public class PlayerSetup : NetworkBehaviour
 
     private void Start()
     {
-        if (!isLocalPlayer)
+      if (!isLocalPlayer)
         {
             for (int i = 0; i < componentsToDisable.Length; i++)
             {
@@ -41,11 +41,13 @@ public class PlayerSetup : NetworkBehaviour
         string netId = GetComponent<NetworkIdentity>().netId.ToString();
         Player player = GetComponent<Player>();
         GameManager.RegisterPlayer(netId,player);
+        GameManager.PlayerActivated(player);
     }
 
     private void OnDisable()
     {
         GameManager.instance.SetSceneCameraActive(true);
+        GameManager.PlayerDesactivated(GetComponent<Player>());
         GameManager.UnregisterPlayer(transform.name);
     }
 }

@@ -33,16 +33,19 @@ public class Player : NetworkBehaviour
 
     public void Setup()
     {
+        
         wasEnabledOnStart = new bool[disableOnDeath.Length];
         for(int i = 0; i < disableOnDeath.Length; i++)
         {
             wasEnabledOnStart[i] = disableOnDeath[i].enabled;
         }
         SetDefaults();
+       
     }
 
     private void SetDefaults()
     {
+       
         isDead = false;
         currentHealth = maxHealth;
         for(int i=0; i<disableOnDeath.Length; i++)
@@ -62,7 +65,7 @@ public class Player : NetworkBehaviour
         {
             GameManager.instance.SetSceneCameraActive(false);
         }
-
+        
     }
 
     private void Update()
@@ -94,6 +97,7 @@ public class Player : NetworkBehaviour
     {
         isDead = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //désactivation des Behaviour y compris la caméra du joueur
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = false;
@@ -116,15 +120,28 @@ public class Player : NetworkBehaviour
         }
         Debug.Log(transform.name + "a été éliminé");
         //changement de caméra
-        if (isLocalPlayer)
+
+        GameManager.PlayerDesactivated(this);
+        if (GameManager.AllPlayers.Count > 0)
         {
-            GameManager.instance.SetSceneCameraActive(true);
+            Debug.Log("Spectator");
+            SpectatorMode.enabled = true;
+            
         }
+        else
+        {
+            GameManager.GOver();
+            if (isLocalPlayer)
+            {
+                GameManager.instance.SetSceneCameraActive(true);
+            }
+        }
+        
         
         
        
 
-        //SpectatorMode.enabled = true;
+        
     }
    
         
