@@ -21,7 +21,6 @@ public class Player : NetworkBehaviour
     private float InvincibilityFlashDelay = 0.15f;
     public float InvincibilityTimeAfterHit = 3f;
     public SpriteRenderer graphics;
-    public HealthBar healthSolo;
     public HealthBar healthBarMulti;
 
     [SerializeField]
@@ -101,7 +100,6 @@ public class Player : NetworkBehaviour
                 Die();
             }
             healthBarMulti.SetHealth((int)currentHealth);
-            healthSolo.SetHealth((int)currentHealth);
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibleDelay());
@@ -168,5 +166,15 @@ public class Player : NetworkBehaviour
                 GameManager.instance.SetSceneCameraActive(true);
             }
         }
+        
+        
+        
+       
+
+        
     }
+   
+        
+
+
 }

@@ -11,8 +11,6 @@ public class BossHealth : MonoBehaviour
     public float InvincibilityTimeAfterHit = 3f;
 
     public SpriteRenderer graphics;
-    private Vector3 velocity = Vector3.zero;
-    private int BumpDirection;
 
     void Start()
     {
@@ -31,12 +29,10 @@ public class BossHealth : MonoBehaviour
     {
         if(!isInvincible)
         {
-            transform.GetComponent<Collider2D>().enabled = false;
             currentHealth -= damage;
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibleDelay());
-            transform.GetComponent<Collider2D>().enabled = true;
         }
     }
 
@@ -44,7 +40,7 @@ public class BossHealth : MonoBehaviour
     {
         while(isInvincible)
         {
-            graphics.color = Color.red;
+            graphics.color = new Color(1f,1f,1f,0f);
             yield return new WaitForSeconds(InvincibilityFlashDelay);
             graphics.color = new Color(1f,1f,1f,1f);
             yield return new WaitForSeconds(InvincibilityFlashDelay);
@@ -61,8 +57,18 @@ public class BossHealth : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             TakeDamage(1);
-            PlayerMovement playerMovement = collision.transform.GetComponent<PlayerMovement>();
-            playerMovement.rb.AddForce(new Vector2(0,200));
+            Player player = collision.transform.GetComponent<Player>(); //need to edit or add isinvicible
+            if (currentHealth>0)
+            {
+                StartCoroutine(HandleInvincibleDelay2(player));
+            }
         }
+    }
+
+    public IEnumerator HandleInvincibleDelay2(Player player)
+    {
+        player.isInvincible = true;
+        yield return new WaitForSeconds(1);
+        player.isInvincible = false;
     }
 }

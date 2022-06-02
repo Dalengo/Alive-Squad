@@ -68,8 +68,8 @@ public class RangeEnnemyPatrol : MonoBehaviour
     {
         if(collision.transform.CompareTag("Player"))
         {
-            Player player = collision.transform.GetComponent<Player>();
-            player.RPcTakeDamage(damageOnCollision);
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            //playerHealth.TakeDamage(damageOnCollision);
         }
     }
 
