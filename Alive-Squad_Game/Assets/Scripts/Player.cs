@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mirror;
 using System.Collections;
+using TMPro;
 
 public class Player : NetworkBehaviour
 {
@@ -13,6 +14,9 @@ public class Player : NetworkBehaviour
     }
 
     public Camera camera;
+    public TextMeshProUGUI interactUI;
+
+    public bool test;
     public bool isInvincible = false;
     private float InvincibilityFlashDelay = 0.15f;
     public float InvincibilityTimeAfterHit = 3f;
