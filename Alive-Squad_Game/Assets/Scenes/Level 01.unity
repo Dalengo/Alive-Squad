@@ -7287,6 +7287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3976522152954157651, guid: 46fc85d292250424d9091bf1c9c226cb, type: 3}
+      propertyPath: sceneId
+      value: 58180435
+      objectReference: {fileID: 0}
     - target: {fileID: 5420778418318920746, guid: 46fc85d292250424d9091bf1c9c226cb, type: 3}
       propertyPath: m_Name
       value: FlyingMonster

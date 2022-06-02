@@ -14,7 +14,7 @@ public class PlayerMovement : NetworkBehaviour
     public float groundCheckRadius;
     public LayerMask collisionLayers;
 
-    private bool flipped = false;
+    private bool facingRight = true;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -25,7 +25,7 @@ public class PlayerMovement : NetworkBehaviour
     
     void Start()
     {
-        spriteRenderer.flipX = true;
+        spriteRenderer.flipX = facingRight;
     }
 
     private void Update()
@@ -55,7 +55,7 @@ public class PlayerMovement : NetworkBehaviour
             MovePlayer(0f);
             return;
         }
-        if (horizontalMovement>0.1f && flipped || horizontalMovement < -0.1f && !flipped)
+        if (horizontalMovement>0.1f && facingRight || horizontalMovement < -0.1f && !facingRight)
         {
             Flip();
         }
@@ -75,20 +75,54 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    void Flip()
-    {
-        Vector3 currentscale = gameObject.transform.localScale;
-        currentscale.x *= -1;
-        gameObject.transform.localScale = currentscale;
-        currentscale = healthBarPlate.transform.localScale;
-        currentscale.x *= -1;
-        healthBarPlate.transform.localScale = currentscale;
-        flipped = !flipped;
-    }
+    
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
+
+    
+
+    // invoked by clients but executed on the server only
+    [Command]
+    void CmdProvideFlipStateToServer(bool state)
+    {
+        // make the change local on the server
+        spriteRenderer.flipX = state;
+
+        // forward the change also to all clients
+        RpcSendFlipState(state);
+    }
+
+    // invoked by the server only but executed on ALL clients
+    [ClientRpc]
+    void RpcSendFlipState(bool state)
+    {
+        // skip this function on the LocalPlayer 
+        // because he is the one who originally invoked this
+        if (isLocalPlayer) return;
+
+        //make the change local on all clients
+        spriteRenderer.flipX = state;
+    }
+
+    // Client makes sure this function is only executed on clients
+    // If called on the server it will throw an warning
+    // https://docs.unity3d.com/ScriptReference/Networking.ClientAttribute.html
+    [Client]
+    private void Flip()
+    {
+        //Only go on for the LocalPlayer
+        if (!isLocalPlayer) return;
+
+        // make the change local on this client
+        facingRight = !facingRight;
+        spriteRenderer.flipX = !facingRight;
+
+        // invoke the change on the Server as you already named the function
+        CmdProvideFlipStateToServer(spriteRenderer.flipX);
+    }
+
 }

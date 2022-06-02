@@ -9,16 +9,20 @@ public class Spectator : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GetCamera(i);
+        cam = GetCamera(ref i);
         if (cam != null)
         {
             cam.enabled = true;
         }
     }
 
-    private Camera GetCamera(int i)
+    private Camera GetCamera(ref int i)
     {
-        Player player = GameManager.AllPlayers[i];
+        if(i<0)
+        {
+            i += GameManager.AllPlayers.Count;
+        }
+        Player player = GameManager.AllPlayers[i%GameManager.AllPlayers.Count];
         
         return player.camera;
     }
@@ -30,18 +34,29 @@ public class Spectator : NetworkBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            CameraPrecedente();
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             CameraSuivante();
         }
         
     }
-    
+    void CameraPrecedente()
+    {
+        i--;
+        cam.enabled = false;
+        cam = GetCamera(ref i);
+        cam.enabled = true;
+    }
+
     void CameraSuivante()
     {
         i++;
         cam.enabled = false;
-        cam = GetCamera(i);
-       
+        cam = GetCamera(ref i);
+        cam.enabled = true;
     }
 }
