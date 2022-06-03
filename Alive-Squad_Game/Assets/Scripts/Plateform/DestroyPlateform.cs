@@ -6,6 +6,7 @@ public class DestroyPlateform : MonoBehaviour
 {
     public float TimeToDestoy;
     public SpriteRenderer[] graphics;
+    private float clignote = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +42,16 @@ public class DestroyPlateform : MonoBehaviour
             {
                 s.color = new Color(1f,1f,1f,0);
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(clignote);
             foreach(SpriteRenderer s in graphics)
             {
                 s.color = new Color(1f,1f,1f,1f);
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(clignote);
+            if (clignote>0.075)
+            {
+                clignote /= 1.5f;
+            }
         }
     }
 }
