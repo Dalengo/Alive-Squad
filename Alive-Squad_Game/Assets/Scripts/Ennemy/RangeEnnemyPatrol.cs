@@ -40,7 +40,7 @@ public class RangeEnnemyPatrol : MonoBehaviour
         if (objs.Length > 0)
         {
             bestdisttoplayer = Vector2.Distance(transform.position, objs[0].transform.position);
-            target = objs[0].transform;
+            target2 = objs[0].transform;
             foreach(GameObject ob in objs)
             {
                 if (Vector2.Distance(transform.position, ob.transform.position) < bestdisttoplayer)
