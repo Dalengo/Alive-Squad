@@ -30,16 +30,17 @@ public class RangeEnnemyPatrol : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-            if (Vector3.Distance(transform.position, target.position) < 0.3f)
-                {
-                    desPoint = (desPoint + 1) % waypoints.Length;
-                    target = waypoints[desPoint];
-                    graphics.flipX = !graphics.flipX;
-                }
-
+        if (Vector3.Distance(transform.position, target.position) < 0.3f)
+        {
+            desPoint = (desPoint + 1) % waypoints.Length;
+            target = waypoints[desPoint];
+            graphics.flipX = !graphics.flipX;
+        }
         objs = GameObject.FindGameObjectsWithTag("Player");
         if (objs.Length > 0)
         {
+            bestdisttoplayer = Vector2.Distance(transform.position, objs[0].transform.position);
+            target = objs[0].transform;
             foreach(GameObject ob in objs)
             {
                 if (Vector2.Distance(transform.position, ob.transform.position) < bestdisttoplayer)
@@ -59,7 +60,6 @@ public class RangeEnnemyPatrol : MonoBehaviour
             if (bestdisttoplayer <= range && canshoot)
             {
                 StartCoroutine(Shoot());
-                bestdisttoplayer = 999;
             }
         }
     }
