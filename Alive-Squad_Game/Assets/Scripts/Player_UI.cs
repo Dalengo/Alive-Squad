@@ -4,6 +4,8 @@ public class Player_UI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
 
+    public GameObject respawnMenu;
+
     void Start()
     {
         PauseMenu.isOn = false;
@@ -14,6 +16,14 @@ public class Player_UI : MonoBehaviour
         {
             Pause();
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            respawnMenu.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            respawnMenu.SetActive(false);
+        }
     }
     
     public void Pause()
@@ -22,3 +32,4 @@ public class Player_UI : MonoBehaviour
         PauseMenu.isOn = pauseMenu.activeSelf;
     }
 }
+  

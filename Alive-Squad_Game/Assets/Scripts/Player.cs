@@ -15,8 +15,7 @@ public class Player : NetworkBehaviour
 
     public Camera camera;
     public TextMeshProUGUI interactUI;
-
-    public bool test;
+    public bool canRespawn = false;
     public bool isInvincible = false;
     private float InvincibilityFlashDelay = 0.15f;
     public float InvincibilityTimeAfterHit = 3f;
@@ -53,6 +52,11 @@ public class Player : NetworkBehaviour
        
     }
 
+    public void Respawn()
+    {
+        Debug.Log("Respawn "+this.username);
+    }
+    
     private void SetDefaults()
     {
        
