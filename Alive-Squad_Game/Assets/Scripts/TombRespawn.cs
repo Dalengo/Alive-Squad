@@ -7,6 +7,7 @@ public class TombRespawn : MonoBehaviour
 
     public bool isInRange;
     public bool isUsed=false;
+    private Player player;
 
 
 
@@ -15,7 +16,11 @@ public class TombRespawn : MonoBehaviour
     {
         if (isUsed)
         {
+            Debug.Log("Désactivation");
             
+            player.interactUI.enabled = false;
+            player.GetComponentInChildren<Player_UI>().respawnMenu.SetActive(false);
+            this.enabled = false;
         }
         if(isInRange && Input.GetKeyDown(KeyCode.F))
         {
@@ -30,9 +35,10 @@ public class TombRespawn : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                 isInRange = true;
-                collision.GetComponent<Player>().interactUI.enabled = true;
-                collision.GetComponent<Player>().GetComponentInChildren<Player_UI>().respawnMenu.SetActive(true);
-                collision.GetComponent<Player>().GetComponentInChildren<Player_UI>().respawnMenu.GetComponentInChildren<RespawnButton>().tomb=GetComponent<TombRespawn>();
+                player = collision.GetComponent<Player>();
+                player.interactUI.enabled = true;
+                player.GetComponentInChildren<Player_UI>().respawnMenu.SetActive(true);
+                player.GetComponentInChildren<Player_UI>().respawnMenu.GetComponentInChildren<RespawnButton>().tomb=GetComponent<TombRespawn>();
                 
             }
         }
