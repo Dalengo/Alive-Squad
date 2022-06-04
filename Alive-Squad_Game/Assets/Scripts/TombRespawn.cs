@@ -16,7 +16,7 @@ public class TombRespawn : MonoBehaviour
     {
         if (isUsed)
         {
-            Debug.Log("Désactivation");
+            Debug.Log("Dï¿½sactivation");
             
             player.interactUI.enabled = false;
             player.GetComponentInChildren<Player_UI>().respawnMenu.SetActive(false);
@@ -39,7 +39,7 @@ public class TombRespawn : MonoBehaviour
                 player.interactUI.enabled = true;
                 player.GetComponentInChildren<Player_UI>().respawnMenu.SetActive(true);
                 player.GetComponentInChildren<Player_UI>().respawnMenu.GetComponentInChildren<RespawnButton>().tomb=GetComponent<TombRespawn>();
-                
+
             }
         }
         

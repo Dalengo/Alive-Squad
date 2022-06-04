@@ -79,6 +79,8 @@ public class Player : NetworkBehaviour
             rigidbody.simulated = true;
             rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+        healthBarMulti.SetHealth((int)currentHealth); //acutalisation de la barre de vie
+        healthBarsolo.SetHealth((int)currentHealth);
     }
     
     private void SetDefaults()
@@ -114,6 +116,10 @@ public class Player : NetworkBehaviour
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
+                if (isDead == true)
+                {
+                    canRespawn=true;
+                }
                 RPcTakeDamage(40f);
             }
             if (canRespawn == true)
