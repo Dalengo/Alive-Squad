@@ -23,6 +23,8 @@ public class Player : NetworkBehaviour
     public SpriteRenderer graphics;
     public HealthBar healthBarMulti;
     public HealthBar healthBarsolo;
+    public AudioClip[] playlist;
+    public AudioSource audioSource;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -105,8 +107,6 @@ public class Player : NetworkBehaviour
         {
             GameManager.instance.SetSceneCameraActive(false);
         }
-
-
         
     }
 
@@ -135,6 +135,8 @@ public class Player : NetworkBehaviour
     {
         if (!isDead && !isInvincible)
         {
+            audioSource.clip = playlist[0];
+            audioSource.Play();
             currentHealth -= amount;
             if (currentHealth <= 0)
             {

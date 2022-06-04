@@ -5,6 +5,8 @@ using Mirror;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    public AudioClip playlist;
+    public AudioSource audioSource;
     public float moveSpeed;
     public float jumpforce;
     public bool isJumping = false;
@@ -70,6 +72,11 @@ public class PlayerMovement : NetworkBehaviour
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity,.05f);
         if (isJumping)
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = playlist;
+                audioSource.Play();
+            }
             rb.AddForce(new Vector2(0f,jumpforce));
             isJumping = false;
         }
