@@ -22,6 +22,7 @@ public class Player : NetworkBehaviour
     public float InvincibilityTimeAfterHit = 3f;
     public SpriteRenderer graphics;
     public HealthBar healthBarMulti;
+    public HealthBar healthBarsolo;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -134,6 +135,7 @@ public class Player : NetworkBehaviour
                 Die();
             }
             healthBarMulti.SetHealth((int)currentHealth);
+            healthBarsolo.SetHealth((int)currentHealth);
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibleDelay());

@@ -2083,10 +2083,12 @@ MonoBehaviour:
   syncInterval: 0.1
   camera: {fileID: 8370038053812821326}
   interactUI: {fileID: 4519233746682669500}
+  canRespawn: 0
   isInvincible: 0
   InvincibilityTimeAfterHit: 3
   graphics: {fileID: 8370038052421430621}
   healthBarMulti: {fileID: 8231794816505568625}
+  healthBarsolo: {fileID: 4599042956783423556}
   maxHealth: 100
   disableOnDeath:
   - {fileID: 8370038052421430611}
