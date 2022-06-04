@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7378403769946669836}
   - component: {fileID: 8124679924635054120}
-  - component: {fileID: 5891389060726262478}
+  - component: {fileID: 4861227040933049148}
   m_Layer: 0
   m_Name: Audiomanager
   m_TagString: Untagged
@@ -442,7 +442,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5891389060726262478
+--- !u!114 &4861227040933049148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,10 +451,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3062497912385197098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df735417fb94a3e4397d4492592e0d10, type: 3}
+  m_Script: {fileID: 11500000, guid: 602d5945b3b90204f8ea7b396145ff7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playlist:
-  - {fileID: 8300000, guid: cd46dd718574b634c8dcb5bb809151e9, type: 3}
-  - {fileID: 8300000, guid: cd46dd718574b634c8dcb5bb809151e9, type: 3}
+  Ennemi: {fileID: 2138658215628778012}
+  playlist: {fileID: 8300000, guid: cd46dd718574b634c8dcb5bb809151e9, type: 3}
   audioSource: {fileID: 8124679924635054120}
