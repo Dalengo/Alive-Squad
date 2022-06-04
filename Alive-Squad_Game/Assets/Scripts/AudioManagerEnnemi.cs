@@ -5,10 +5,10 @@ using UnityEngine;
 public class AudioManagerEnnemi : MonoBehaviour
 {
     public GameObject Ennemi;
-    private float rangeSon = 7;
+    private float rangeSon = 6;
 
     private Transform target;
-    private float bestdisttoplayer;
+    private float bestdisttoplayer = 999;
     private GameObject[] objs;
     public AudioClip playlist;
     public AudioSource audioSource;

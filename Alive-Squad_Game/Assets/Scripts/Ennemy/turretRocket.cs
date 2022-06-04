@@ -17,11 +17,13 @@ public class turretRocket : MonoBehaviour
     private float nexTimetoShoot = 0;
     public Transform ShootPos;
     public float ShootSpeed;
+    public AudioClip playlist;
+    public AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource.clip = playlist;
     }
 
     // Update is called once per frame
@@ -50,7 +52,6 @@ public class turretRocket : MonoBehaviour
                     if(Detected == false)
                     {
                         Detected = true;
-                        sprite.color = Color.red;
                     }
                 }
                 else
@@ -58,7 +59,6 @@ public class turretRocket : MonoBehaviour
                     if(Detected == true)
                     {
                         Detected = false;
-                        sprite.color = Color.green;
                     }
                 }
             }
@@ -72,7 +72,9 @@ public class turretRocket : MonoBehaviour
                 }
                 if(Time.time > nexTimetoShoot)
                 {
+                    audioSource.Stop();
                     nexTimetoShoot = Time.time+1/FireRate;
+                    audioSource.Play();
                     shoot();
                 }
             }

@@ -16,6 +16,8 @@ public class bomb : MonoBehaviour
     private Transform target2;
     private bool clignote;
     private int die = 0;
+    public AudioClip playlist;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -54,12 +56,15 @@ public class bomb : MonoBehaviour
         clignote = true;
         StartCoroutine(InvincibilityFlash());
         StartCoroutine(HandleInvincibleDelay());
+        audioSource.clip = playlist;
         StartCoroutine(Delete());
     }
 
     IEnumerator Delete()
     {
-        yield return new WaitForSeconds(ExplosionDelay);
+        yield return new WaitForSeconds(ExplosionDelay/3);
+        audioSource.Play();
+        yield return new WaitForSeconds(ExplosionDelay/3*2);
         if (bestdisttoplayer <= RangeToDamage)
         {
             Player player = target2.GetComponent<Player>();
