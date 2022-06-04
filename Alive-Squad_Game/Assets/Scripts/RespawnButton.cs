@@ -11,6 +11,8 @@ public class RespawnButton : MonoBehaviour
 
     private Player player;
 
+    public TombRespawn tomb;
+
     public void Setup(Player playerb)
     {
         usernameText.text = playerb.username;
@@ -20,5 +22,10 @@ public class RespawnButton : MonoBehaviour
     public void Respawn()
     {
         player.Respawn();
+    }
+
+    public void Used()
+    {
+        tomb.isUsed = true;
     }
 }

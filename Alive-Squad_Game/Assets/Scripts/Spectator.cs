@@ -7,13 +7,18 @@ public class Spectator : NetworkBehaviour
     Camera cam;
 
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         cam = GetCamera(ref i);
         if (cam != null)
         {
             cam.enabled = true;
         }
+    }
+
+    private void OnDisable()
+    {
+        cam.enabled = false;
     }
 
     private Camera GetCamera(ref int i)

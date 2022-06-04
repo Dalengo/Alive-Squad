@@ -14,6 +14,7 @@ public class Player : NetworkBehaviour
     }
 
     public Camera camera;
+   
     public TextMeshProUGUI interactUI;
     public bool canRespawn = false;
     public bool isInvincible = false;
@@ -54,7 +55,29 @@ public class Player : NetworkBehaviour
 
     public void Respawn()
     {
-        Debug.Log("Respawn "+this.username);
+        isDead = false;
+        currentHealth = maxHealth;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        SpectatorMode.enabled = false;
+        foreach(Behaviour behaviour in disableOnDeath)
+        {
+            behaviour.enabled = true;
+        }
+        foreach (GameObject gameObject in disableGameObjectsOnDeath)
+        {
+            gameObject.SetActive(true);
+        }
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = true;
+        }
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        if (rigidbody != null)
+        {
+            rigidbody.simulated = true;
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
     
     private void SetDefaults()
@@ -79,6 +102,8 @@ public class Player : NetworkBehaviour
         {
             GameManager.instance.SetSceneCameraActive(false);
         }
+
+
         
     }
 
@@ -90,7 +115,12 @@ public class Player : NetworkBehaviour
             {
                 RPcTakeDamage(40f);
             }
+            if (canRespawn == true)
+            {
+                Respawn();
+            }
         }
+
     }
 
     [ClientRpc]
