@@ -9,7 +9,7 @@ public class RespawnButton : MonoBehaviour
     [SerializeField]
     Text usernameText;
 
-    private Player player;
+    public Player player;
 
     public TombRespawn tomb;
 

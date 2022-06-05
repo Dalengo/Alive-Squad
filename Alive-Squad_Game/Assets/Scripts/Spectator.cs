@@ -25,9 +25,9 @@ public class Spectator : NetworkBehaviour
     {
         if(i<0)
         {
-            i += GameManager.AllPlayers.Count;
+            i += GameManager.AllPlayersAlive.Count;
         }
-        Player player = GameManager.AllPlayers[i%GameManager.AllPlayers.Count];
+        Player player = GameManager.AllPlayersAlive[i%GameManager.AllPlayersAlive.Count];
         
         return player.camera;
     }

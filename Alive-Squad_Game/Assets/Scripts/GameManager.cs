@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
         get => _AllPlayers;
     }
 
+    private static List<Player> _AllPlayersAlive = new List<Player>();
+
+    public static List<Player> AllPlayersAlive
+    {
+        get => _AllPlayersAlive;
+    }
+
     private static List<Camera> allCams;
 
     public static GameManager instance;
@@ -31,26 +38,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static List<Camera> CameraAll()
-    {
-        List<Camera> allCams= new List<Camera>();
-        _AllPlayers=GetAllPlayer();
-        foreach (Player player in _AllPlayers)
-        {
-            Camera camerab = player.camera;
-
-            if (camerab != null)
-            {
-                allCams.Add(camerab);
-            }
-            else
-            {
-                Debug.Log("Not Add");
-            }
-            
-        }
-        return allCams;
-    }
+    
 
     public static void RegisterPlayer(string netID, Player player)
     {
@@ -77,25 +65,15 @@ public class GameManager : MonoBehaviour
         }
         sceneCamera.SetActive(isActive);
 
-        //allCams = CameraAll();
-        //sceneCamera.SetActive(false);
-        //allCams[1].enabled = true;
+        
     }
 
-    private static List<Player> GetAllPlayer()
-    {
-        List<Player> AllPlayers = new List<Player>();
-        foreach (KeyValuePair<string, Player> playerGet in players)
-        {
-            AllPlayers.Add(playerGet.Value);
-        }
-        return AllPlayers;
-    }
+    
     
     public static void PlayerDesactivated(Player player)
     {
-        _AllPlayers.Remove(player);
-        if (_AllPlayers.Count == 0)
+        _AllPlayersAlive.Remove(player);
+        if (_AllPlayersAlive.Count == 0)
         {
             GOver();
             return;
@@ -110,7 +88,8 @@ public class GameManager : MonoBehaviour
         }
         
         _AllPlayers.Add(player);
-        
+        _AllPlayersAlive.Add(player);
+
     }
 
     public static void GOver()
