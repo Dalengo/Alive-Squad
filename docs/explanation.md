@@ -69,10 +69,10 @@ The most dangerous trap is the turret. It fires rockets in your direction if you
   <img src="Images/piege_turret1.PNG" width="562" height="370">
 </p>
 
-<h3> Multiplayer
+<h3> Multiplayer </h3>
 The game also has a multiplayer feature. The concept remains exactly the same except that you can play with your friends. 
 <p align="center">
-  <img src="Images/multiplayer1.PNG" width="1004" height="584">
+  <img src="Images/multiplayer1.PNG" width="1004" height="504">
 </p>
 
 If you want to see more about our game you can directly try it by downloading it !
