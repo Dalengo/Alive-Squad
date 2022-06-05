@@ -38,8 +38,10 @@ public class TombRespawn : MonoBehaviour
                 player = collision.GetComponent<Player>();
                 player.interactUI.enabled = true;
                 player.GetComponentInChildren<Player_UI>().respawnMenu.SetActive(true);
-                player.GetComponentInChildren<Player_UI>().respawnMenu.GetComponentInChildren<RespawnButton>().tomb=GetComponent<TombRespawn>();
-
+                foreach(RespawnButton respawnbutton in player.GetComponentInChildren<Player_UI>().respawnMenu.GetComponentsInChildren<RespawnButton>())
+                {
+                    respawnbutton.tomb = this;
+                }
             }
         }
         

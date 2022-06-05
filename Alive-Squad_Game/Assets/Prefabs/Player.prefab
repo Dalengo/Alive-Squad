@@ -2445,6 +2445,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   camera: {fileID: 8370038053812821326}
+  isRespawned: 0
   interactUI: {fileID: 4519233746682669500}
   canRespawn: 0
   isInvincible: 0
@@ -2460,9 +2461,8 @@ MonoBehaviour:
   disableOnDeath:
   - {fileID: 8370038052421430611}
   - {fileID: 8370038053812821326}
-  disableGameObjectsOnDeath:
-  - {fileID: 2131432156520743319}
-  - {fileID: 8370038053812821315}
+  disableGameObjectsOnDeath: []
+  Name: {fileID: 2131432156520743319}
   SpectatorMode: {fileID: 1913841299466898377}
   username: Player
 --- !u!114 &-3578929936069549224

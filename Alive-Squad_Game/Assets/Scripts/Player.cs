@@ -5,6 +5,7 @@ using TMPro;
 
 public class Player : NetworkBehaviour
 {
+    [SyncVar]
     private bool _isDead = false;
 
     public bool isDead
@@ -14,8 +15,13 @@ public class Player : NetworkBehaviour
     }
 
     public Camera camera;
-   
+    [SyncVar]
+    public bool isRespawned = false;
+
     public TextMeshProUGUI interactUI;
+    
+
+    
     public bool canRespawn = false;
     public bool isInvincible = false;
     private float InvincibilityFlashDelay = 0.15f;
@@ -28,7 +34,7 @@ public class Player : NetworkBehaviour
 
     [SerializeField]
     private float maxHealth = 100f;
-    
+
     [SyncVar]
     private float currentHealth;
 
@@ -36,6 +42,8 @@ public class Player : NetworkBehaviour
     private Behaviour[] disableOnDeath;
     [SerializeField]
     private GameObject[] disableGameObjectsOnDeath;
+    [SerializeField]
+    private GameObject Name;
     private bool[] wasEnabledOnStart;
 
     [SerializeField]
@@ -46,31 +54,54 @@ public class Player : NetworkBehaviour
 
     public void Setup()
     {
-        
+
         wasEnabledOnStart = new bool[disableOnDeath.Length];
-        for(int i = 0; i < disableOnDeath.Length; i++)
+        for (int i = 0; i < disableOnDeath.Length; i++)
         {
             wasEnabledOnStart[i] = disableOnDeath[i].enabled;
         }
         SetDefaults();
-       
+
     }
 
-    public void Respawn()
+    
+
+    [Command]
+    public void PutisRespawned()
     {
+        RpcRespawn();
+    }
+
+
+
+    [ClientRpc]
+    private void RpcRespawn()
+    {
+        if (isLocalPlayer)
+        {
+            SpectatorMode.enabled = false;
+
+
+            foreach (Behaviour behaviour in disableOnDeath)
+            {
+                behaviour.enabled = true;
+            }
+
+            foreach (GameObject gameObject in disableGameObjectsOnDeath)
+            {
+                gameObject.SetActive(true);
+            }
+        }
         isDead = false;
+        Debug.Log("Activation health");
         currentHealth = maxHealth;
+        Debug.Log(currentHealth);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        SpectatorMode.enabled = false;
-        foreach(Behaviour behaviour in disableOnDeath)
-        {
-            behaviour.enabled = true;
-        }
-        foreach (GameObject gameObject in disableGameObjectsOnDeath)
-        {
-            gameObject.SetActive(true);
-        }
+        healthBarMulti.SetHealth((int)currentHealth); //actutalisation de la barre de vie
+        healthBarsolo.SetHealth((int)currentHealth);
         Collider2D collider = GetComponent<Collider2D>();
+        Name.SetActive(true);
+
         if (collider != null)
         {
             collider.enabled = true;
@@ -79,18 +110,19 @@ public class Player : NetworkBehaviour
         if (rigidbody != null)
         {
             rigidbody.simulated = true;
-            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rigidbody.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
         }
-        healthBarMulti.SetHealth((int)currentHealth); //acutalisation de la barre de vie
-        healthBarsolo.SetHealth((int)currentHealth);
+        
+        
     }
-    
+
+
     private void SetDefaults()
     {
-       
+
         isDead = false;
         currentHealth = maxHealth;
-        for(int i=0; i<disableOnDeath.Length; i++)
+        for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = wasEnabledOnStart[i];
         }
@@ -101,13 +133,13 @@ public class Player : NetworkBehaviour
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
-            collider.enabled=true;
+            collider.enabled = true;
         }
         if (isLocalPlayer)
         {
-            GameManager.instance.SetSceneCameraActive(false);
+            //GameManager.instance.SetSceneCameraActive(false);
         }
-        
+
     }
 
     private void Update()
@@ -118,13 +150,15 @@ public class Player : NetworkBehaviour
             {
                 if (isDead == true)
                 {
-                    canRespawn=true;
+
                 }
                 RPcTakeDamage(40f);
             }
             if (canRespawn == true)
             {
-                Respawn();
+                GameManager.PlayerActivated(this);
+                SetCanRespawn(false);
+                PutisRespawned();
             }
         }
 
@@ -153,11 +187,11 @@ public class Player : NetworkBehaviour
 
     private IEnumerator InvincibilityFlash()
     {
-        while(isInvincible)
+        while (isInvincible)
         {
-            graphics.color = new Color(1f,1f,1f,0f);
+            graphics.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(InvincibilityFlashDelay);
-            graphics.color = new Color(1f,1f,1f,1f);
+            graphics.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(InvincibilityFlashDelay);
         }
     }
@@ -171,16 +205,18 @@ public class Player : NetworkBehaviour
     {
         isDead = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        
         //d�sactivation des Behaviour y compris la cam�ra du joueur
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = false;
         }
+        
         for (int i = 0; i < disableGameObjectsOnDeath.Length; i++)
         {
             disableGameObjectsOnDeath[i].SetActive(false);
         }
-
+        Name.SetActive(false);
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
@@ -194,9 +230,9 @@ public class Player : NetworkBehaviour
         }
         Debug.Log(transform.name + "a �t� �limin�");
         //changement de cam�ra
-
+        
         GameManager.PlayerDesactivated(this);
-        if (GameManager.AllPlayers.Count > 0)
+        if (GameManager.AllPlayersAlive.Count > 0)
         {
             Debug.Log("Spectator");
             SpectatorMode.enabled = true;
@@ -205,20 +241,52 @@ public class Player : NetworkBehaviour
         else
         {
             GameManager.GOver();
-            if (isLocalPlayer)
-            {
-                GameManager.instance.SetSceneCameraActive(true);
-            }
         }
         
         
         
        
 
-        
+
+
     }
-   
+    // invoked by clients but executed on the server only
+    [Command(requiresAuthority = false)]
+    void CmdProvideCanRespawnStateToServer(bool state)
+    {
+        // make the change local on the server
+        canRespawn = state;
+
+        // forward the change also to all clients
+        RpcSendCanRespawnState(state);
+    }
+
+    // invoked by the server only but executed on ALL clients
+    [ClientRpc]
+    void RpcSendCanRespawnState(bool state)
+    {
+        // skip this function on the LocalPlayer 
+        // because he is the one who originally invoked this
+
+
+        //make the change local on all clients
+        canRespawn = state;
+    }
+
+    // Client makes sure this function is only executed on clients
+    // If called on the server it will throw an warning
+    // https://docs.unity3d.com/ScriptReference/Networking.ClientAttribute.html
+    
+    public void SetCanRespawn(bool state)
+    {
+        //Only go on for the LocalPlayer
         
 
+        // make the change local on this client
+        canRespawn = state;
+        
+        // invoke the change on the Server as you already named the function
+        CmdProvideCanRespawnStateToServer(canRespawn);
+    }
 
 }

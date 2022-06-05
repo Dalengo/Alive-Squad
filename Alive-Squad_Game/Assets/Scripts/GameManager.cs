@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         string playerId = playerIdPrefix + netID;
         players.Add(playerId, player);
+        _AllPlayers.Add(player);
         player.transform.name = playerId;
     }
 
@@ -57,37 +58,31 @@ public class GameManager : MonoBehaviour
         return players[playerId];
     }
 
-    public void SetSceneCameraActive(bool isActive)
-    {
-        if (sceneCamera == null)
-        {
-            return;
-        }
-        sceneCamera.SetActive(isActive);
-
-        
-    }
+    
 
     
     
     public static void PlayerDesactivated(Player player)
     {
         _AllPlayersAlive.Remove(player);
+        Debug.Log(player.name + " a été retiré de _AllPlayerAlive");
         if (_AllPlayersAlive.Count == 0)
         {
+           
             GOver();
+            
             return;
         }
     }
     public static void PlayerActivated(Player player)
     {
-        Debug.Log(player.name+" a été ajouté à _AllPlayer");
+        Debug.Log(player.name+" a été ajouté à _AllPlayerAlive");
         if (player == null)
         {
             Debug.Log("Player Null");
         }
         
-        _AllPlayers.Add(player);
+        
         _AllPlayersAlive.Add(player);
 
     }

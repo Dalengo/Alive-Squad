@@ -46,7 +46,7 @@ public class PlayerSetup : NetworkBehaviour
 
     private void OnDisable()
     {
-        GameManager.instance.SetSceneCameraActive(true);
+        //GameManager.instance.SetSceneCameraActive(true);
         GameManager.PlayerDesactivated(GetComponent<Player>());
         GameManager.UnregisterPlayer(transform.name);
     }

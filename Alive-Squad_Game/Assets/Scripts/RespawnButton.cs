@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class RespawnButton : MonoBehaviour
+public class RespawnButton : NetworkBehaviour
 {
 
     [SerializeField]
@@ -19,9 +20,11 @@ public class RespawnButton : MonoBehaviour
         player = playerb;
     }
 
+
     public void Respawn()
     {
-        player.Respawn();
+        Debug.Log("Activation bouton");
+        player.SetCanRespawn(true);
     }
 
     public void Used()
