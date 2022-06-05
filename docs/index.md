@@ -37,10 +37,14 @@ details summary {cursor: pointer;}
 </style>
 </head>
 
+{% for page in site.pages %}
+    <a href={{ page.filename }}>{{ page.title }}</a>
+{% endfor %}
+
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#explanation">Game Explanation</a>
-  <a href="Project_Progress">Project Progress</a>
+  <a href="Project_Progress.md">Project Progress</a>
   <a href="#source">Source</a>
 </div> 
 
