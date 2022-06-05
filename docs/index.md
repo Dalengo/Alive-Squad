@@ -40,7 +40,7 @@ details summary {cursor: pointer;}
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#explanation">Game Explanation</a>
-  <a href="Project_Progress.md">Project Progress</a>
+  <a href="./Project_Progress.md">Project Progress</a>
   <a href="#source">Source</a>
 </div> 
 
