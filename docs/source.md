@@ -44,6 +44,12 @@ details summary {cursor: pointer;}
   <a href="./source">Source</a>
 </div> 
 
+<h3> Softwares </h3>
+    Unity: <a href="https://unity.com/"> https://unity.com/ </a>
+    <h3> Sources </h3>
+    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
+    Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a
+
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
 Rapport de soutenance 1 pdf: <a href="Files/Rapport 1 AliveSquad.pdf" download="">click here</a> <br>
