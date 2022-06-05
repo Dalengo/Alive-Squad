@@ -1,9 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     private const string playerIdPrefix = "Player";
+
+    [SerializeField]
+    NetworkManager networkManager;
+
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
@@ -90,5 +95,6 @@ public class GameManager : MonoBehaviour
     public static void GOver()
     {
         Debug.Log("Fin de partie");
+        NetworkManager.singleton.ServerChangeScene("Login");
     }
 }
