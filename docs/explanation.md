@@ -54,12 +54,26 @@ Green monsters simply move between two points and inflict damage on you if you h
 Purple enemies shoot balls in your direction. Be careful to kill them you must not jump when he shoots otherwise you will take damage. 
 Orange enemies are suicide bombers. If you enter their range they will start following you to kill you. If you move far enough away they will stop following you. 
 Finally, the boss of each level has several life points. You cannot attack it multiple times in a row while it is flashing red. 
+<p align="center">
+  <img src="Images/enemmi_boss1.PNG" width="300" height="300">
+</p>
 
 <h3> Trap </h3>
 There are also traps. The bombs go off when you approach them and kill you if you are within the blast radius. 
+<p align="center">
+  <img src="Images/piege_bomb1.PNG" width="300" height="300">
+</p>
 Be careful not to fall on the spikes otherwise you will take damage. 
 The most dangerous trap is the turret. It fires rockets in your direction if you are within its range. 
+<p align="center">
+  <img src="Images/piege_turret1.PNG" width="300" height="300">
+</p>
+
+<h3> Multiplayer
 The game also has a multiplayer feature. The concept remains exactly the same except that you can play with your friends. 
+<p align="center">
+  <img src="Images/multiplayer1.PNG" width="300" height="300">
+</p>
 
 If you want to see more about our game you can directly try it by downloading it !
 Good luck finishing all the levels which are all getting harder and harder !
