@@ -6,13 +6,9 @@ using TMPro;
 public class Player : NetworkBehaviour
 {
     [SyncVar]
-    private bool _isDead = false;
+    public bool isDead = false;
 
-    public bool isDead
-    {
-        get => _isDead;
-        protected set => _isDead = value;
-    }
+    
 
     public Camera camera;
     [SyncVar]
@@ -252,16 +248,68 @@ public class Player : NetworkBehaviour
     }
     // invoked by clients but executed on the server only
     [Command(requiresAuthority = false)]
+    void CmdProvideCanRespawnStateToServer(bool state, Vector3 position)
+    {
+        // make the change local on the server
+        canRespawn = state;
+        transform.position = position;
+        // forward the change also to all clients
+        RpcSendCanRespawnState(state,position);
+    }
+
+    // invoked by the server only but executed on ALL clients
+    [ClientRpc]
+    void RpcSendCanRespawnState(bool state, Vector3 position)
+    {
+        // skip this function on the LocalPlayer 
+        // because he is the one who originally invoked this
+
+
+        //make the change local on all clients
+        canRespawn = state;
+        transform.position = position;
+    }
+
+    // Client makes sure this function is only executed on clients
+    // If called on the server it will throw an warning
+    // https://docs.unity3d.com/ScriptReference/Networking.ClientAttribute.html
+    
+    public void SetCanRespawn(bool state,Vector3 position)
+    {
+        //Only go on for the LocalPlayer
+        
+
+        // make the change local on this client
+        canRespawn = state;
+        transform.position = position;
+        
+        // invoke the change on the Server as you already named the function
+        CmdProvideCanRespawnStateToServer(canRespawn,position);
+    }
+
+    public void SetCanRespawn(bool state)
+    {
+        //Only go on for the LocalPlayer
+
+
+        // make the change local on this client
+        canRespawn = state;
+        
+
+        // invoke the change on the Server as you already named the function
+        CmdProvideCanRespawnStateToServer(canRespawn);
+    }
+
+    [Command(requiresAuthority = false)]
     void CmdProvideCanRespawnStateToServer(bool state)
     {
         // make the change local on the server
         canRespawn = state;
-
+        
         // forward the change also to all clients
         RpcSendCanRespawnState(state);
     }
 
-    // invoked by the server only but executed on ALL clients
     [ClientRpc]
     void RpcSendCanRespawnState(bool state)
     {
@@ -271,22 +319,6 @@ public class Player : NetworkBehaviour
 
         //make the change local on all clients
         canRespawn = state;
-    }
-
-    // Client makes sure this function is only executed on clients
-    // If called on the server it will throw an warning
-    // https://docs.unity3d.com/ScriptReference/Networking.ClientAttribute.html
-    
-    public void SetCanRespawn(bool state)
-    {
-        //Only go on for the LocalPlayer
-        
-
-        // make the change local on this client
-        canRespawn = state;
-        
-        // invoke the change on the Server as you already named the function
-        CmdProvideCanRespawnStateToServer(canRespawn);
     }
 
 }

@@ -26,9 +26,9 @@ public class RespawnMenu : MonoBehaviour
     }
     private void OnDisable()
     {
-        foreach (Transform child in RespawnMenuList)
+        foreach (RespawnButton button in RespawnMenuList.GetComponentsInChildren<RespawnButton>())
         {
-            Destroy(child.gameObject);
+            Destroy(button.gameObject);
         }
     }
 }
