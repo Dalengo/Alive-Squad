@@ -39,9 +39,9 @@ details summary {cursor: pointer;}
 
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a href="#explanation">Game Explanation</a>
+  <a href="#progress">Project Progress</a>
+  <a href="#source">Source</a>
 </div> 
 
 Back to the surface, Alive Squad immerses you in a universe mixing adventure and mystery, the goal: to find your way through the bowels of Zuri, a hostile planet populated by extraterrestrials.
@@ -49,7 +49,7 @@ Back to the surface, Alive Squad immerses you in a universe mixing adventure and
 To do this, you will have to understand and adapt to your environment in order to survive! To win, you have to climb the floors by jumping with precision while staying alive.
 
 <details>
-    <summary> <h2> Introduction </h2> </summary>
+    <summary> <h2 href="home"> Introduction </h2> </summary>
    
 Alive Squad is developed by Clément Cotte, Matis Lima Barros, Ange Mercoyrol--Dol and Yanis Martin.
     
