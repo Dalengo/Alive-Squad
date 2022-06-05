@@ -76,7 +76,7 @@ Main menu allows to quit the game, access to the settings (for the moment "FullS
 Pause menu has 2 buttons "Resume" and "Main, the first one removes the pause and the game continue; the second one returns to the main menu and leaves the game in
 progress. It is also possible to access and exit the pause menu with the Escape key.
 <p align="center">
-  <img src="Images/menu_pause.PNG" width="500" height="280"> 
+  <img src="Images/menu_pause(1).PNG" width="500" height="280"> 
 </p>
     
 <h3> Forecast for the future </h3>
@@ -103,4 +103,29 @@ The multiplayer has been added, there are still some bugs but it is functional.
 Scene were linked to make the game functional
     
 <p style="white-space: pre-line"></p>
+</details>
+
+<details>
+    <summary> <h2> Project progress: 06/06/2022 </h2> </summary>
+It is our final progress for this project. We are very happy by our result.
+<h3> Style </h3>
+All the style of our game were updated to match the game vibe. Our menu are now looking good and real menu. For exemple there is our new pause menu:
+<p align="center">
+  <img src="Images/menu_pause.PNG" width="591" height="258"> 
+</p>
+    
+<h3> Level </h3>
+Levels are now finished ! We made levels to be hard and long. No image because we don't want to spoil you :) You can try directly our game to see what our levels look like. 
+
+<h3> Ennemies and traps </h3>
+As explane in the Game Explanation page, Alive Squad has now a lot of ennemies and traps. If you want to learn more about that go look our explanation !
+    
+<h3> Multiplayer </h3>
+Our best feature is now completed and working well ! We added a new item, the respawn tomb. It's now possible to respawn your friend to make the game more fun in multiplayer. We had a lot of problems with synchronization but it's now better. 
+
+<h3> Sound </h3>
+One of the most important part of the game were added, the sound ! You can now play the game with his unique music made by our team ! We also added sound for ennemies and player.
+    
+<h3> Scenes link </h3>
+We now have a real scene link for our game, that means you can navigate through menus and levels without any problem. 
 </details>
