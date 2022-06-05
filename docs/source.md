@@ -38,17 +38,18 @@ details summary {cursor: pointer;}
 </head>
 
 <div class="topnav">
-  <a class="active" href="./index">Home</a>
+  <a href="./index">Home</a>
   <a href="./explanation">Game Explanation</a>
   <a href="./Project_Progress">Project Progress</a>
-  <a href="./source">Source</a>
+  <a class="active" href="./source">Source</a>
 </div> 
 
 <h3> Softwares </h3>
-    Unity: <a href="https://unity.com/"> https://unity.com/ </a>
-    <h3> Sources </h3>
-    OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
-    Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a
+Unity: <a href="https://unity.com/"> https://unity.com/ </a>
+
+<h3> Sources </h3>
+OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
+Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a
 
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
@@ -59,5 +60,3 @@ Rapport de soutenance 2 pdf: <a href="Files/Rapport 2 AliveSquad.pdf" download="
 <h3> Project download </h3>
 Normal version projet .zip: <br>
 Lite version project .zip: 
-    
-</details>
