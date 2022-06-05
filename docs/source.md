@@ -48,8 +48,8 @@ details summary {cursor: pointer;}
 Unity: <a href="https://unity.com/"> https://unity.com/ </a>
 
 <h3> Sources </h3>
-OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a>
-Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a
+OpenGameArt: <a href="https://opengameart.org/"> OpenGameArt.org </a> <br>
+Youtube: <a href="https://youtube.com/"> https://youtube.com/ </a>
 
 <h3> PDf download </h3>
 Cahier des charges pdf: <a href="Files/Cahier des charges AliveSquad.pdf" download="">click here</a> <br>
