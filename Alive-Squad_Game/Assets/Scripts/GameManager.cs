@@ -9,6 +9,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     NetworkManager networkManager;
 
+    public bool isMenu=false;
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
@@ -95,6 +96,8 @@ public class GameManager : NetworkBehaviour
     public static void GOver()
     {
         Debug.Log("Fin de partie");
+       
         NetworkManager.singleton.ServerChangeScene("Login");
+        
     }
 }

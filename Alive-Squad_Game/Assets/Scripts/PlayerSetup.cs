@@ -4,22 +4,36 @@ using Mirror;
 public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField]
-    Behaviour[] componentsToDisable;
+    GameObject[] componentsToActiveOnlocal;
 
-    private void Start()
+    [SerializeField]
+    GameObject[] componentsToActive;
+
+    [SerializeField]
+    Behaviour PlayerMovement;
+
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+
+
+    private void Set()
     {
-      if (!isLocalPlayer)
+        if (isLocalPlayer)    
         {
-            for (int i = 0; i < componentsToDisable.Length; i++)
+            foreach(GameObject component in componentsToActiveOnlocal)
             {
-                componentsToDisable[i].enabled = false;
+                component.SetActive(true);
             }
+            PlayerMovement.enabled = true;
         }
-        else
+        foreach (GameObject component in componentsToActive)
         {
-            string username = UserAccountManager.LoggedInUsername;
-            CmdSetUsername(transform.name, username);
+            component.SetActive(true);
         }
+
+        spriteRenderer.enabled = true;
+        string username = UserAccountManager.LoggedInUsername;
+        if (hasAuthority) CmdSetUsername(transform.name, username);
         GetComponent<Player>().Setup();
     }
 
@@ -42,6 +56,10 @@ public class PlayerSetup : NetworkBehaviour
         Player player = GetComponent<Player>();
         GameManager.RegisterPlayer(netId,player);
         GameManager.PlayerActivated(player);
+        if (!GameManager.instance.isMenu)
+        {
+            Set();
+        }
     }
 
     private void OnDisable()

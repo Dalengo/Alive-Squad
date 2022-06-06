@@ -148,6 +148,7 @@ public class Player : NetworkBehaviour
                 {
 
                 }
+                
                 RPcTakeDamage(40f);
             }
             if (canRespawn == true)
