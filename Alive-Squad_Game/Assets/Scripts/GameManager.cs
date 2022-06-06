@@ -9,12 +9,12 @@ using System;
 
 public class GameManager : NetworkBehaviour
 {
-    private const string playerIdPrefix = "Player";
+    public const string playerIdPrefix = "Player";
 
 
     public bool isMenu=false;
 
-    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
+    public static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
     private static List<Player> _AllPlayers=new List<Player>();
 
@@ -55,11 +55,18 @@ public class GameManager : NetworkBehaviour
         players.Add(playerId, player);
         _AllPlayers.Add(player);
         player.transform.name = playerId;
+        Debug.Log(player.transform.name);
+        Debug.Log("RegisterPlayer done");
+        Debug.Log("players count : " + players.Count);
+        Debug.Log("_AllPlayers count : " + AllPlayers.Count);
+        Debug.Log("----------------------------------------------");
     }
 
     public static void UnregisterPlayer(string playerId)
     {
+        Debug.Log("enlèvemement");
         players.Remove(playerId);
+        Debug.Log(players.Count);
     }
 
     public static Player GetPlayer(string playerId)
@@ -75,13 +82,8 @@ public class GameManager : NetworkBehaviour
     {
         _AllPlayersAlive.Remove(player);
         Debug.Log(player.name + " a été retiré de _AllPlayerAlive");
-        if (_AllPlayersAlive.Count == 0)
-        {
-           
-            GOver();
-            
-            return;
-        }
+
+        
     }
     public static void PlayerActivated(Player player)
     {
@@ -93,19 +95,23 @@ public class GameManager : NetworkBehaviour
         
         
         _AllPlayersAlive.Add(player);
-
+        Debug.Log("_AllPlayersAlive count : " + AllPlayersAlive.Count);
+        Debug.Log("----------------------------------------------");
     }
 
     public static void GOver()
     {
         Debug.Log("Fin de partie");
-       
+        players.Clear();
+        AllPlayers.Clear();
+        AllPlayersAlive.Clear();
         NetworkManager.singleton.ServerChangeScene("MainMenuScene");
         
     }
 
     public void Win()
     {
+        Debug.Log("win");
         foreach (Player player in AllPlayers)
         {
             player.GetComponentInChildren<Player_UI>().Win_Panel.SetActive(true);

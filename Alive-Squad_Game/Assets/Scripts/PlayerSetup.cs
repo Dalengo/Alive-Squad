@@ -15,9 +15,31 @@ public class PlayerSetup : NetworkBehaviour
     [SerializeField]
     SpriteRenderer spriteRenderer;
 
+    public bool isactive=false;
+
+    private void Start()
+    {
+        if (!GameManager.instance.isMenu)
+        {
+            Debug.Log("Enable");
+            string netId = GetComponent<NetworkIdentity>().netId.ToString();
+            Player player = GetComponent<Player>();
+            GameManager.RegisterPlayer(netId, player);
+            Debug.Log("vérification " + player.transform.name);
+            GameManager.PlayerActivated(player);
+            
+
+
+            this.Set();
+        }
+       
+       
+        
+    }
 
     private void Set()
     {
+        Debug.Log("Set");
         if (isLocalPlayer)    
         {
             foreach(GameObject component in componentsToActiveOnlocal)
@@ -26,12 +48,17 @@ public class PlayerSetup : NetworkBehaviour
             }
             PlayerMovement.enabled = true;
         }
+        else
+        {
+            Debug.Log("NOPE");
+        }
         foreach (GameObject component in componentsToActive)
         {
             component.SetActive(true);
         }
 
         spriteRenderer.enabled = true;
+        Debug.Log("Ok jusque là");
         string username = UserAccountManager.LoggedInUsername;
         if (hasAuthority) CmdSetUsername(transform.name, username);
         GetComponent<Player>().Setup();
@@ -48,24 +75,39 @@ public class PlayerSetup : NetworkBehaviour
         }
     }
 
-
+    
     public override void OnStartClient()
-    {
+    {   
+        
+        Debug.Log("Start");
+        Debug.Log(GetComponent<Player>().transform.name);
         base.OnStartClient();
-        string netId = GetComponent<NetworkIdentity>().netId.ToString();
-        Player player = GetComponent<Player>();
-        GameManager.RegisterPlayer(netId,player);
-        GameManager.PlayerActivated(player);
-        if (!GameManager.instance.isMenu)
+
+        GetComponent<Player>().transform.name = "Player" + (GetComponent<Player>().GetComponent<NetworkIdentity>().netId.ToString());
+        Debug.Log(GameManager.AllPlayers.Count);
+        Debug.Log(GameManager.players.Count);
+        Debug.Log(GameManager.AllPlayersAlive.Count);
+        Debug.Log("---------------------------------------------------");
+        if(isLocalPlayer)
         {
-            Set();
+            Debug.Log("TRUUUUUUUUUUE");
         }
     }
 
     private void OnDisable()
     {
-        //GameManager.instance.SetSceneCameraActive(true);
-        GameManager.PlayerDesactivated(GetComponent<Player>());
-        GameManager.UnregisterPlayer(transform.name);
+        if (!GameManager.instance.isMenu)
+        {
+            Debug.Log("Disable");
+            Debug.Log(GetComponent<Player>().transform.name);
+            GameManager.PlayerDesactivated(GetComponent<Player>());
+            GameManager.UnregisterPlayer(GetComponent<Player>().transform.name);
+            Debug.Log("players count : " + GameManager.players.Count);
+            Debug.Log("_AllPlayers count : " + GameManager.AllPlayers.Count);
+            Debug.Log("_AllPlayersAlive count : " + GameManager.AllPlayersAlive.Count);
+            Debug.Log("----------------------------------------------");
+        }
+            
+
     }
 }

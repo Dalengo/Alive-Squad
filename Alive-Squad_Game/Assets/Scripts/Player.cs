@@ -237,6 +237,11 @@ public class Player : NetworkBehaviour
             SpectatorMode.enabled = true;
             
         }
+        else
+        {
+            GameManager.UnregisterPlayer(GetComponent<Player>().transform.name);
+            GameManager.GOver();
+        }
 
 
     }
@@ -315,11 +320,6 @@ public class Player : NetworkBehaviour
         canRespawn = state;
     }
 
-    public static Player localPlayer;
-    public void HostGame()
-    {
-
-    }
 
     
     
