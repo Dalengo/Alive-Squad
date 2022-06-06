@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 951426314}
   - component: {fileID: 951426313}
   - component: {fileID: 951426312}
+  - component: {fileID: 951426315}
   m_Layer: 5
   m_Name: MenuLevel
   m_TagString: Untagged
@@ -1360,7 +1361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c51fd8814ada64a9cb7fc7b4e9e81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: SampleScene
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &951426313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,6 +1401,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951426310}
   m_CullTransparentMesh: 1
+--- !u!114 &951426315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951426310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3432271444
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &975679762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,6 +2625,8 @@ GameObject:
   - component: {fileID: 1947208302}
   - component: {fileID: 1947208301}
   - component: {fileID: 1947208300}
+  - component: {fileID: 1947208303}
+  - component: {fileID: 1947208304}
   m_Layer: 5
   m_Name: Level1
   m_TagString: Untagged
@@ -2677,9 +2698,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951426312}
-        m_TargetAssemblyTypeName: LevelsMenu, Assembly-CSharp
-        m_MethodName: StartLevelOne
+      - m_Target: {fileID: 1947208303}
+        m_TargetAssemblyTypeName: BoutonLevel, Assembly-CSharp
+        m_MethodName: StartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2727,6 +2748,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947208298}
   m_CullTransparentMesh: 1
+--- !u!114 &1947208303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947208298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d632fd42101641945a7ef1bc0a65605b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  levelToload: Level 01
+--- !u!114 &1947208304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947208298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2893127453
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &2102758735
 GameObject:
   m_ObjectHideFlags: 0

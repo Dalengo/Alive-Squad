@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Mirror;
 
-public class LevelsMenu : MonoBehaviour
+public class LevelsMenu : NetworkBehaviour
 {
-    public string LevelToLoad;
-    public void StartLevelOne()
+    public void StartLevel(string LevelToLoad)
     {
-        SceneManager.LoadScene(LevelToLoad);
+        NetworkManager.singleton.ServerChangeScene("Lobby");
     }
 }
