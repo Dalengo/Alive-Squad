@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_UI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    public GameObject Win_Panel;
 
     public GameObject respawnMenu;
 

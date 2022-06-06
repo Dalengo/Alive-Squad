@@ -1545,6 +1545,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3941567376789688595, guid: 289718d6393c80a448da822d8f5b6327, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 892567548}
+    - target: {fileID: 3941567376789688595, guid: 289718d6393c80a448da822d8f5b6327, type: 3}
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 1206070325}

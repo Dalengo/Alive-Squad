@@ -1,13 +1,16 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using Mirror;
+using System;
+
+
 
 public class GameManager : NetworkBehaviour
 {
     private const string playerIdPrefix = "Player";
 
-    [SerializeField]
-    NetworkManager networkManager;
 
     public bool isMenu=false;
 
@@ -97,7 +100,37 @@ public class GameManager : NetworkBehaviour
     {
         Debug.Log("Fin de partie");
        
-        NetworkManager.singleton.ServerChangeScene("Login");
+        NetworkManager.singleton.ServerChangeScene("MainMenuScene");
         
+    }
+
+    public void Win()
+    {
+        foreach (Player player in AllPlayers)
+        {
+            player.GetComponentInChildren<Player_UI>().Win_Panel.SetActive(true);
+        }
+        Wait();
+       
+    }
+
+    public void Wait()
+    {
+        StartCoroutine(ExampleCoroutine());
+    }
+
+
+    public static IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3);
+
+        NetworkManager.singleton.ServerChangeScene("MainMenuScene");
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

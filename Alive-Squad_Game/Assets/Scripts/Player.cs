@@ -237,15 +237,6 @@ public class Player : NetworkBehaviour
             SpectatorMode.enabled = true;
             
         }
-        else
-        {
-            GameManager.GOver();
-        }
-        
-        
-        
-       
-
 
 
     }
@@ -330,4 +321,6 @@ public class Player : NetworkBehaviour
 
     }
 
+    
+    
 }

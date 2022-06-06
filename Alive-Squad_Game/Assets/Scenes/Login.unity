@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: isMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3941567376789688595, guid: 289718d6393c80a448da822d8f5b6327, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 1166552485}
     - target: {fileID: 3941567376789688604, guid: 289718d6393c80a448da822d8f5b6327, type: 3}
       propertyPath: m_Name
       value: GameManager
