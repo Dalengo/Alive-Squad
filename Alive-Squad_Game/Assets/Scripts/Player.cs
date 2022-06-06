@@ -48,6 +48,8 @@ public class Player : NetworkBehaviour
     [SyncVar]
     public string username = "Player";
 
+
+    
     public void Setup()
     {
 
@@ -320,6 +322,12 @@ public class Player : NetworkBehaviour
 
         //make the change local on all clients
         canRespawn = state;
+    }
+
+    public static Player localPlayer;
+    public void HostGame()
+    {
+
     }
 
 }

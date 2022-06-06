@@ -1,22 +1,53 @@
-// vis2k: GUILayout instead of spacey += ...; removed Update hotkeys to avoid
-// confusion if someone accidentally presses one.
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Mirror
 {
-    
     public class MyNetworkManagerHUD : MonoBehaviour
     {
         NetworkManager manager;
-
+        [SerializeField]
+        private InputField adress;
         public int offsetX;
         public int offsetY;
 
+        
+        private bool canBeSpawned=false;
+
         void Awake()
         {
+            adress.text = "localhost";
             manager = GetComponent<NetworkManager>();
-        }
+            if (!NetworkClient.isConnected && !NetworkServer.active)
+            {
+                //StartButtons();
+                canBeSpawned = true;
+                
+            }
+            else
+            {
+                canBeSpawned = false;
+                //StatusLabels();
+            }
 
+            // client ready
+            if (NetworkClient.isConnected && !NetworkClient.ready)
+            {
+
+                NetworkClient.Ready();
+                if (NetworkClient.localPlayer == null)
+                {
+                    NetworkClient.AddPlayer();
+                }
+
+
+            }
+
+            StopButtons();
+        }
+        /*
         void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10 + offsetX, 40 + offsetY, 215, 9999));
@@ -46,18 +77,18 @@ namespace Mirror
 
             GUILayout.EndArea();
         }
+        */
 
         void StartButtons()
         {
+            /*
             if (!NetworkClient.active)
             {
                 // Server + Client
                 if (Application.platform != RuntimePlatform.WebGLPlayer)
                 {
-                    if (GUILayout.Button("Host (Server + Client)"))
-                    {
-                        manager.StartHost();
-                    }
+                    manager.StartHost();
+
                 }
 
                 // Client + IP
@@ -90,6 +121,7 @@ namespace Mirror
                     manager.StopClient();
                 }
             }
+            */
         }
 
         void StatusLabels()
@@ -140,6 +172,43 @@ namespace Mirror
                     manager.StopServer();
                 }
             }
+        }
+        public void Host()
+        {
+            if (canBeSpawned)
+            {
+                manager.networkAddress = adress.text;
+                if (!NetworkClient.active)
+                {
+                    // Server + Client
+                    if (Application.platform != RuntimePlatform.WebGLPlayer)
+                    {
+                        manager.StartHost();
+
+                    }
+                }
+            }
+        }
+        public void Client()
+        {
+            if (canBeSpawned)
+            {
+                manager.networkAddress = adress.text;
+                if (!NetworkClient.active)
+                {
+                    // Server + Client
+                    if (Application.platform != RuntimePlatform.WebGLPlayer)
+                    {
+                        manager.StartClient();
+                    }
+                }
+            }
+                
+        }
+
+        public void Cancel()
+        {
+
         }
     }
 }
